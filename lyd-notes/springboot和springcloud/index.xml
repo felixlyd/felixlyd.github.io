@@ -1,0 +1,90 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Felixlyd – SpringBoot和SpringCloud</title>
+    <link>https://felixlyd.github.io/lyd-notes/springboot%E5%92%8Cspringcloud/</link>
+    <description>Recent content in SpringBoot和SpringCloud on Felixlyd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	  <atom:link href="https://felixlyd.github.io/lyd-notes/springboot%E5%92%8Cspringcloud/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Interceptor、Filter、Advice、AOP</title>
+      <link>https://felixlyd.github.io/lyd-notes/springboot%E5%92%8Cspringcloud/interceptorfilteradviceaop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/springboot%E5%92%8Cspringcloud/interceptorfilteradviceaop/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000022833940&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;过滤器 和 拦截器 6个区别，别再傻傻分不清了&lt;/a&gt;
+&lt;a href=&#34;https://developer.aliyun.com/article/636629&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;过滤器(Filter)和拦截器(Interceptor)的区别-阿里云开发者社区&lt;/a&gt;
+&lt;a href=&#34;https://www.cnblogs.com/eternityz/p/15330089.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Filter中抛出异常@RestControllerAdvice注解无法捕获的问题 - 未月廿三 - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/wuchenxiwalter/article/details/129133738&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;记一次SpringBoot Filter的坑-过滤器被重复执行问题_springboot过滤器执行了多次_记忆旅途的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.cn/post/6892605557295808526&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;如何在过滤器中修改http请求体和响应体 - 掘金&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/zyndev/article/details/117634054&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Java | Spring 使用 RequestBodyAdvice 来实现请求参数的加解密预处理_双鬼带单的博客-CSDN博客&lt;/a&gt;
+&lt;a href=&#34;https://blog.csdn.net/liaomingwu/article/details/126246340&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;springboot项目通过ResponseBodyAdvice增加响应头和修改响应内容_springboot设置响应头_程序猿（攻城狮）的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.51cto.com/article/672990.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;springboot 实现拦截器的 3 种方式介绍及异步执行的思考-51CTO.COM&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/50932518/how-to-modify-request-body-before-reaching-controller-in-spring-boot&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;How to modify request body before reaching controller in spring boot&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/b1303110335/article/details/118925970&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;springboot 过滤器Filter vs 拦截器Interceptor vs 切片Aspect解析_乐乐Java路漫漫的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;AOP&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/yjclsx/article/details/80829844&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;在Spring AOP切面中启用新事务_aop切面添加事务_普通网友的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Spring Cloud学习笔记</title>
+      <link>https://felixlyd.github.io/lyd-notes/springboot%E5%92%8Cspringcloud/spring-cloud%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/springboot%E5%92%8Cspringcloud/spring-cloud%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>
+        
+        
+        &lt;ol&gt;
+&lt;li&gt;使用Ribbon实现负载均衡，通过自定义Ribbon配置类来修改负载均衡的规则（默认有9种）&lt;/li&gt;
+&lt;li&gt;可以用RestTemplate客户端来调用“服务提供者”的接口，也可以用Feign客户端来调用“服务提供者”的接口，二者的注解不同。Feign的一些注解并不是SpringMVC的原生注解。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;feign&lt;/strong&gt;中使用&lt;strong&gt;hystrix&lt;/strong&gt;会使得&lt;code&gt;@autowired&lt;/code&gt;注解失效，因此要给FeignClient接口加上注解&lt;code&gt;@Primary&lt;/code&gt;，给继承FeignClient的MyHystrix加上&lt;code&gt;@Component&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;HystrixDashboard&lt;/code&gt;要加上配置&lt;code&gt;hystrix.dashboard.proxy-stream-allow-list=localhost&lt;/code&gt;，才能连接进行访问；在需要监控的&lt;code&gt;feign&lt;/code&gt;客户端开启&lt;code&gt;Hystrix&lt;/code&gt;和&lt;code&gt;HystrixDashboard&lt;/code&gt;进行监控&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;turbine&lt;/strong&gt;默认依赖于eureka，要在pom.xml中排除依赖&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework.cloud&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-cloud-starter-netflix-turbine&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;lt;exclusions&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nt&#34;&gt;&amp;lt;exclusion&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    &lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework.cloud&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    &lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-cloud-starter-netflix-eureka-client&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nt&#34;&gt;&amp;lt;/exclusion&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nt&#34;&gt;&amp;lt;exclusion&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    &lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework.cloud&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    &lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-cloud-starter-netflix-eureka-server&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nt&#34;&gt;&amp;lt;/exclusion&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;lt;/exclusions&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-0&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;网关&lt;code&gt;GateWay&lt;/code&gt;在微服务中极其重要，负责&lt;strong&gt;路由转发&lt;/strong&gt;，&lt;strong&gt;过滤器&lt;/strong&gt;等等。路由转发规则有默认的11种&lt;strong&gt;路由谓词工厂&lt;/strong&gt;；路由转发能通过注册到服务中心实现转发；过滤器有20个&lt;strong&gt;网关过滤器&lt;/strong&gt;和9个&lt;strong&gt;全局过滤器&lt;/strong&gt;。路由转发指将请求地址按某种匹配规则（即谓词工厂）转发到服务提供地址；过滤器能对请求内容进行处理，以达到&lt;strong&gt;参数校验、服务监控、限流&lt;/strong&gt;等功能&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Gateway&lt;/code&gt;的实现是用&lt;code&gt;Netty+WebFlux&lt;/code&gt;，因此使用时不要加入&lt;code&gt;Web&lt;/code&gt;依赖&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,162 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Felixlyd – 必知必会工具</title>
+    <link>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 必知必会工具 on Felixlyd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	  <atom:link href="https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docker</title>
+      <link>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/docker/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Docker&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.jb51.net/article/207867.htm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;docker 命令报异常permission denied的解决方案_docker_脚本之家&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/diaomina/p/12830449.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;docker部署gitlab - 我好高冷 - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/asxf/p/11158912.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;（九） Docker 容器数据卷(挂载) - 时光, - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/suanec/p/8430664.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RTNETLINK answers: Operation not permitted - 苏轶然 - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Docker-compose&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/java_sha/article/details/109576497&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;docker-compose 中 volumes、environment、privileged、network_mode的使用_九亿少女的梦@的博客-CSDN博客_docker-compose privileged: true&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/brady-wang/p/14440649.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;docker-compose启动consul - brady-wang - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bookstack.cn/read/docker_practice-1.3.0/compose-commands.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Compose - 命令说明 - 《Docker — 从入门到实践（v1.3.0）》 - 书栈网 · BookStack&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;DOCKERFILE&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/51kata/p/5266626.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;docker学习笔记18：Dockerfile 指令 VOLUME 介绍 - 51kata - 博客园&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/nginx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/nginx/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Nginx高并发转发TIME_WAIT&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/sfnz/p/14693190.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;记一次nginx与linux内核性能调优的过程 - 思凡念真 - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.aliyun.com/article/839065&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Nginx 实现 10w+ 并发之 Linux 内核优化-阿里云开发者社区&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Nginx常见名词释义&lt;/h1&gt;&lt;h2&gt;静态代理&lt;span class=&#34;absolute -mt-20&#34; id=&#34;静态代理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e9%9d%99%e6%80%81%e4%bb%a3%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;把所有静态资源的访问改为访问nginx，而不是访问tomcat，这种方式叫静态代理。因为nginx更擅长于静态资源的处理，性能更好，效率更高。
+所以在实际应用中，我们将静态资源比如图片、css、html、js等交给nginx处理，而不是由tomcat处理。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;Pasted%20image%2020231027165950.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h2&gt;反向代理&lt;span class=&#34;absolute -mt-20&#34; id=&#34;反向代理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/491075761&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Nginx&amp;mdash;&amp;mdash;nginx 反向代理 （建议收藏）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://bbs.huaweicloud.com/blogs/301714&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;nginx&amp;ndash;❤️图解及代码实现正向代理、反向代理及负载均衡（非常实用，建议收藏❤️）-云社区-华为云&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;多个域名复用一个IP&lt;span class=&#34;absolute -mt-20&#34; id=&#34;多个域名复用一个ip&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%a4%9a%e4%b8%aa%e5%9f%9f%e5%90%8d%e5%a4%8d%e7%94%a8%e4%b8%80%e4%b8%aaip&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/372101519&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;通过Nginx反向代理实现多个域名站点复用一个公网IP&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/redis/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Redis&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.jb51.net/article/204696.htm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Redis和数据库 数据同步问题的解决_Redis_脚本之家&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://otonomo.io/blog-redis-kafka-or-rabbitmq-which-microservices-message-broker-to-choose/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Which MicroServices Message Broker To Choose?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bookstack.cn/read/Redis-zh/2.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1. Redis 文档 - 1.1. 键空间通知（keyspace notification） - 《Redis 中文文档》 - 书栈网 · BookStack&lt;/a&gt;
+&lt;a href=&#34;https://www.bookstack.cn/read/redis-tutorial/14.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;9. Redis 持久化 - 《Redis 学习教程》 - 书栈网 · BookStack&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/zhuifeng523/p/12274740.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10个很多人不知道的Redis使用技巧 - Java架构师追风 - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.modb.pro/db/220061&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Redis缓存使用技巧和设计方案 - 墨天轮&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://doc.redisfans.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Redis 命令参考 — Redis 命令参考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/ruber/p/13434616.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;连redis 连不上怎么办！ - 花开如梦 - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/zeal9s/article/details/86620336&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;解决Unable to connect to Redis server: 192.168.110.1/192.168.110.1:6379_zeal9s的博客-CSDN博客_unable to connect to redis server:&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_35673617/article/details/80561489&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Redis Desktop连接不上Centos7上部署的redis数据库解决方法_qq_35673617的博客-CSDN博客&lt;/a&gt;
+&lt;a href=&#34;https://jingyan.baidu.com/article/fc07f98931aa4953fee51948.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Liunx中如何让Redis-server后台运行-百度经验&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Kafka&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/along21/p/10278100.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;超详细“零”基础kafka入门篇 - alonghub - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.51cto.com/u_14932245/4340967&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;四万字32图，Kafka知识体系保姆级教程宝典_五分钟学大数据的技术博客_51CTO博客&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Git系使用</title>
+      <link>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/git%E7%B3%BB%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/git%E7%B3%BB%E4%BD%BF%E7%94%A8/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Github&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.yangzhiping.com/tech/github.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;如何高效利用GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.cn/post/6844903529711140871&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Wiki 页面的添加和设置 - 掘金&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://academy.realm.io/cn/posts/codereview-howto/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;如何利用GitHub进行代码审查&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/zwluoyuxi/article/details/107600491&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2020年，一招教你打造个性化的Github主页！_依然范特稀西的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/anuraghazra/github-readme-stats&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub - anuraghazra/github-readme-stats: Dynamically generated stats for your github readmes&lt;/a&gt;
+&lt;a href=&#34;https://docs.github.com/cn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.labnol.org/internet/github-gist-tutorial/28499/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;What You Can Do With Gists on Github? - Digital Inspiration&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.zhihu.com/question/21343711&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;如何看待 Github Gist 这个服务，怎样更好的利用？ - 知乎&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Github-action&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_44213825/article/details/108734931&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github Actions自动化部署_liannian9_zlh的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/hiyang/p/12944881.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;使用github action发布python包到Pypi - hiyang - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jingyan.baidu.com/article/6525d4b11f002bed7d2e94d3.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github Action将项目自动部署到ph-pages步骤-百度经验&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/103552188&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;编写自己的 GitHub Action，体验自动化部署&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.github.com/cn/actions/migrating-to-github-actions/migrating-from-gitlab-cicd-to-github-actions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;从 GitLab CI/CD 迁移到 GitHub Actions&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Git-branch&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/58962086&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;一个可以提高开发效率的命令：cherry-pick&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://devblogs.microsoft.com/oldnewthing/20180312-00/?p=98215&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stop cherry-picking, start merging, Part 1: The merge conflict&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/luosongchao/p/3408365.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git删除远程分支和本地分支 - 罗松超 - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/u014540717/article/details/54314126&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git命令－切换分支_木_凌的博客-CSDN博客_git 更换分支&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/ea1dab2de419&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Git自学成才——新建远程分支和删除&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/geeeeeeeeek/git-recipes/wiki/3.4-%E4%BD%BF%E7%94%A8%E5%88%86%E6%94%AF&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;3.4 使用分支 · geeeeeeeeek/git-recipes Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Gitlab&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/b04356e014fa&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;手把手教你 GitLab 的安装及使用&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/fengxf/p/11866016.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gitlab持续集成，自动部署 - fengxiaofeng - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/47492668&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gitlab自动部署搭建历程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_42300783/article/details/108110127&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker + GitLab CI/CD 实现自动化部署_薛洋洋洋的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/c398509f8861&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitLab+Docker快速搭建CI/CD自动化部署&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Git&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/u011877584/article/details/103875421/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git代码从A库某分支迁到B库某分支（亲测有效）_fu_jian_feng的博客-CSDN博客_git 仓库a引用仓库b部分代码&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/zhanqing/p/15133067.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Git报错解决：OpenSSL SSL_read: Connection was reset, errno 10054 错误解决 - 沾青先生 - 博客园&lt;/a&gt;
+&lt;a href=&#34;https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learn Git with Bitbucket Cloud | Atlassian Git Tutorial&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>IDE使用</title>
+      <link>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/ide%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/ide%E4%BD%BF%E7%94%A8/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;idea使用&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/u014163312/article/details/106347082&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;社区版Intellij IDEA中配置Tomcat服务器_拾年一剑的博客-CSDN博客_intelj社区版可以配置tomcat么&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_38709953/article/details/88178499&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;idea 启动项目错误解决：错误信息Command line is too long._我是阿木木的博客-CSDN博客_too long idea&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/16ed26b1afbd&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IntelliJ 自动生成测试类, 自定义测试类&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;idea技巧&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/hy_coming/article/details/80741717&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IDEA怎么生成UML类图_hy_coming的博客-CSDN博客_idea生成uml&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Netty</title>
+      <link>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/netty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/2.%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E5%B7%A5%E5%85%B7/netty/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://developer.aliyun.com/article/769587&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;超详细Netty入门，看这篇就够了！-阿里云开发者社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.yiibai.com/netty/netty-intro.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Netty概述 - Netty教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dongzl.github.io/netty-handbook/#/README&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Netty 学习手册&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

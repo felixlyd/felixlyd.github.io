@@ -1,0 +1,626 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Felixlyd – Vue</title>
+    <link>https://felixlyd.github.io/lyd-notes/vue/</link>
+    <description>Recent content in Vue on Felixlyd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	  <atom:link href="https://felixlyd.github.io/lyd-notes/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Vue Tips</title>
+      <link>https://felixlyd.github.io/lyd-notes/vue/vue-tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/vue/vue-tips/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;1.vue基础知识&lt;span class=&#34;absolute -mt-20&#34; id=&#34;1vue基础知识&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1vue%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;容器与Vue实例&lt;strong&gt;一一对应&lt;/strong&gt;。真实生产开发中，只会有一个Vue实例。不同的网页模块用&lt;strong&gt;组件&lt;/strong&gt;进行实现，最终这些组件组装成一个网页。&lt;/li&gt;
+&lt;li&gt;由vue管理的函数，&lt;strong&gt;一定不能写成箭头式函数&lt;/strong&gt;，否则，该函数就不由vue管理了。&lt;/li&gt;
+&lt;li&gt;vue中&lt;code&gt;data&lt;/code&gt;下的才做数据劫持和数据代理，而&lt;code&gt;methods&lt;/code&gt;不会。&lt;code&gt;methods&lt;/code&gt;配置的函数放在&lt;code&gt;data下&lt;/code&gt;也可以正常运行，但会使得vue数据代理的内容过于臃肿，强烈建议不要这样做。&lt;/li&gt;
+&lt;li&gt;箭头函数没有自己的this，会往作用域的外部找this&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2.模板语法&lt;span class=&#34;absolute -mt-20&#34; id=&#34;2模板语法&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2%e6%a8%a1%e6%9d%bf%e8%af%ad%e6%b3%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;使用&lt;strong&gt;指令语法&lt;/strong&gt;，例如&lt;code&gt;v-bind:var=&amp;quot;xxx&amp;quot;&lt;/code&gt;或者&lt;code&gt;:var=&amp;quot;xxx&amp;quot;&lt;/code&gt;，vue会将引号中的内容当做js表达式进行执行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;插值语法&lt;/strong&gt;用于解析标签体内容:&lt;code&gt;{{}}&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;指令语法&lt;/strong&gt;用于解析标签。通常语法形式为&lt;code&gt;v-xxxx。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;函数在指令语法中，无参时可以加小括号或者不加；在插值语法中一定要加小括号，否则会打印函数体本身，而不是执行函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;3. 数据绑定&lt;span class=&#34;absolute -mt-20&#34; id=&#34;3-数据绑定&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-%e6%95%b0%e6%8d%ae%e7%bb%91%e5%ae%9a&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;v-model&lt;/code&gt;只能应用于表单元素上，即能够输入值的元素（具有value值），或和用户能交互的元素。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;4. MVVM模型和VUE&lt;span class=&#34;absolute -mt-20&#34; id=&#34;4-mvvm模型和vue&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-mvvm%e6%a8%a1%e5%9e%8b%e5%92%8cvue&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;M是指模型Model，对应js中的objects，记录了数据data&lt;/li&gt;
+&lt;li&gt;V是指视图View，对应页面中的dom元素，生成了页面视图&lt;/li&gt;
+&lt;li&gt;VM是指视图模型ViewModel，即VUE实例对象，完成了dom监听、数据代理、数据劫持、数据绑定等功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;5. 数据代理&lt;span class=&#34;absolute -mt-20&#34; id=&#34;5-数据代理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-%e6%95%b0%e6%8d%ae%e4%bb%a3%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Object.defineProperty&lt;/code&gt;方法添加的属性，默认不参与枚举（或遍历），无法被修改，无法被删除&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 该方法添加的属性默认不参与枚举（或遍历），无法被修改，无法被删除
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;Object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;defineProperty&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;person&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;age&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;enumerable&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 控制属性是否参与枚举，默认false
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// writable: true, // 控制属性是否被修改， 默认false
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;configurable&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 控制属性是否能被删除，默认false
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// getter在读取该属性（这里是age属性）时会被调用，且函数返回值为该属性（age）的值
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// getter不能和writable同时使用
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;有人读取了age&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;number&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// setter在修改该属性（age）时会被调用，并执行代码逻辑
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;有人修改了age&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;number&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-0&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;数据代理：通过一个对象代理对另一个对象中属性的操作（读和写）&lt;/p&gt;
+&lt;p&gt;vue中的&lt;strong&gt;数据代理&lt;/strong&gt;使得编写代码更简单方便，实现原理即为&lt;code&gt;Object.defineProperty&lt;/code&gt;，vm中的数据存储在&lt;code&gt;_data&lt;/code&gt;之中。并且，&lt;code&gt;_data&lt;/code&gt;又进行了&lt;strong&gt;数据劫持&lt;/strong&gt;，数据劫持的原因是修改了变量后，网页数据能立即随之改变，即响应式操作，因此需添加观察者（Observer）。&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../Pasted%20image%2020231027170306.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h2&gt;6. 事件处理&lt;span class=&#34;absolute -mt-20&#34; id=&#34;6-事件处理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#6-%e4%ba%8b%e4%bb%b6%e5%a4%84%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;事件修饰符&lt;span class=&#34;absolute -mt-20&#34; id=&#34;事件修饰符&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%8b%e4%bb%b6%e4%bf%ae%e9%a5%b0%e7%ac%a6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;嵌套事件时，事件捕获阶段是从外到内，事件冒泡阶段是从内到外。事件先进入捕获阶段再进入冒泡阶段，并且默认是在事件冒泡阶段开始处理事件。&lt;/li&gt;
+&lt;li&gt;事件修饰符&lt;code&gt;passive&lt;/code&gt;，不是所有事件都适用，在移动端开发中会经常使用到&lt;/li&gt;
+&lt;li&gt;事件修饰符支持链式调用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;键盘事件&lt;span class=&#34;absolute -mt-20&#34; id=&#34;键盘事件&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e9%94%ae%e7%9b%98%e4%ba%8b%e4%bb%b6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;vue中的按键别名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../Pasted%20image%2020231027170318.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tab&lt;/code&gt;键只能配合&lt;code&gt;keydown&lt;/code&gt;使用&lt;/li&gt;
+&lt;li&gt;系统修饰键 (用法特殊) : ctrl、alt、shift、meta
+&lt;ul&gt;
+&lt;li&gt;配合&lt;code&gt;keyup&lt;/code&gt;使用: 按下修饰键的同时，再按下其他键，随后释放其他键，事件才被触发。&lt;/li&gt;
+&lt;li&gt;配合&lt;code&gt;keydown&lt;/code&gt;使用: 正常触发事件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;系统修饰键+其他按键用法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../Pasted%20image%2020231027170326.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h2&gt;7. 计算属性&lt;span class=&#34;absolute -mt-20&#34; id=&#34;7-计算属性&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#7-%e8%ae%a1%e7%ae%97%e5%b1%9e%e6%80%a7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;定义: 要用的属性不存在，要通过已有属性（&lt;code&gt;vue&lt;/code&gt;管理的属性）计算得来。&lt;/li&gt;
+&lt;li&gt;原理: 底层借助了&lt;code&gt;Object.defineproperty&lt;/code&gt;方法提供的getter和setter。&lt;/li&gt;
+&lt;li&gt;get函数什么时候执行?
+&lt;ul&gt;
+&lt;li&gt;初次读取时会执行一次。&lt;/li&gt;
+&lt;li&gt;当依赖的数据发生改变时会被再次调用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;优势: 与&lt;code&gt;methods&lt;/code&gt;实现相比，内部有缓存机制(复用)，效率更高，调试方便&lt;/li&gt;
+&lt;li&gt;备注:
+&lt;ul&gt;
+&lt;li&gt;计算属性最终会出现在&lt;code&gt;vm&lt;/code&gt;上，直接读取使用即可。&lt;/li&gt;
+&lt;li&gt;如果计算属性要被修改，那必须写&lt;code&gt;set&lt;/code&gt;函数去响应修改，且&lt;code&gt;set&lt;/code&gt;中要引起计算时依赖的数据发生改变&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Tips：
+&lt;ul&gt;
+&lt;li&gt;计算属性中所用的任何&lt;code&gt;vue&lt;/code&gt;中的数据即&lt;code&gt;this.xxx&lt;/code&gt;的值发生改变时，计算属性都会重新去计算值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;8.监视属性&lt;span class=&#34;absolute -mt-20&#34; id=&#34;8监视属性&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#8%e7%9b%91%e8%a7%86%e5%b1%9e%e6%80%a7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;当被监视的属性变化时，回调函数&lt;code&gt;handler&lt;/code&gt;自动调用，进行相关操作&lt;/li&gt;
+&lt;li&gt;监视的属性必须存在，才能进行监视!!&lt;/li&gt;
+&lt;li&gt;监视的两种写法:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;new Vue&lt;/code&gt;时传入&lt;code&gt;watch&lt;/code&gt;配置&lt;/li&gt;
+&lt;li&gt;通过&lt;code&gt;vm.$watch&lt;/code&gt;监视&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;深度监视&lt;span class=&#34;absolute -mt-20&#34; id=&#34;深度监视&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%b7%b1%e5%ba%a6%e7%9b%91%e8%a7%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Vue&lt;/code&gt;中的&lt;code&gt;watch&lt;/code&gt;默认不监测对象内部值的改变(一层)&lt;/li&gt;
+&lt;li&gt;配置&lt;code&gt;deep:true&lt;/code&gt;可以监测对象内部值改变(多层)&lt;/li&gt;
+&lt;li&gt;备注:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Vue&lt;/code&gt;自身可以监测对象内部值的改变，但&lt;code&gt;vue&lt;/code&gt;提供的&lt;code&gt;watch&lt;/code&gt;默认不可以!&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;watch&lt;/code&gt;时根据数据的具体结构，决定是否采用深度监视。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;9.计算属性和监视属性比较&lt;span class=&#34;absolute -mt-20&#34; id=&#34;9计算属性和监视属性比较&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#9%e8%ae%a1%e7%ae%97%e5%b1%9e%e6%80%a7%e5%92%8c%e7%9b%91%e8%a7%86%e5%b1%9e%e6%80%a7%e6%af%94%e8%be%83&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;computed&lt;/code&gt;能完成的功能，&lt;code&gt;watch&lt;/code&gt;都可以完成。&lt;code&gt;computed&lt;/code&gt;的代码实现更为简便&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;watch&lt;/code&gt;能完成的功能，&lt;code&gt;computed&lt;/code&gt;不一定能完成，例如: &lt;code&gt;watch&lt;/code&gt;可以进行异步操作。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;两个重要的小原则:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;所被&lt;code&gt;Vue&lt;/code&gt;管理的函数，&lt;strong&gt;最好写成普通函数&lt;/strong&gt;，这样&lt;code&gt;this&lt;/code&gt;的指向才是vm或组件实例对象。&lt;/li&gt;
+&lt;li&gt;所有&lt;strong&gt;不被&lt;/strong&gt;&lt;code&gt;Vue&lt;/code&gt;所管理的函数(定时器的回调函数、&lt;code&gt;ajax&lt;/code&gt;的回调函数、&lt;code&gt;Promise&lt;/code&gt;的回调函数等)，&lt;strong&gt;最好写成箭头函数&lt;/strong&gt;,这样&lt;code&gt;this&lt;/code&gt;的指向才是vm或组件实例对象。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;10.绑定样式&lt;span class=&#34;absolute -mt-20&#34; id=&#34;10绑定样式&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#10%e7%bb%91%e5%ae%9a%e6%a0%b7%e5%bc%8f&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;class样式
+&lt;ul&gt;
+&lt;li&gt;写法:class=&amp;ldquo;xxx”xxx可以是字符串、对象、数组。
+&lt;ul&gt;
+&lt;li&gt;字符串写法适用于:类名不确定，要动态获取。&lt;/li&gt;
+&lt;li&gt;数组写法适用于:要绑定多个样式，个数不确定，名宁也不确定。&lt;/li&gt;
+&lt;li&gt;对象写法适用于:要绑定多个样式，个数确定，名字也确定，但不确定用不用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;style样式
+&lt;ul&gt;
+&lt;li&gt;对象写法:style=&amp;quot;{fontsize: xxx}&amp;ldquo;其中xxx是动态值。&lt;/li&gt;
+&lt;li&gt;数组写法:style=&amp;quot;[a,b]&amp;ldquo;其中a、b是&lt;strong&gt;样式对象&lt;/strong&gt;。样式对象中的&lt;code&gt;key&lt;/code&gt;值必须是css中存在的样式关键字。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;11.条件渲染&lt;span class=&#34;absolute -mt-20&#34; id=&#34;11条件渲染&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#11%e6%9d%a1%e4%bb%b6%e6%b8%b2%e6%9f%93&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;v-if&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;写法：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;v-if&lt;/code&gt;=&amp;ldquo;表达式&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v-else-if&lt;/code&gt;=&amp;ldquo;表达式&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v-else&lt;/code&gt;=&amp;ldquo;表达式&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;适用于:切换频率较低的场景。&lt;/li&gt;
+&lt;li&gt;特点:不展示的DOM元素直接被移除。注意: &lt;code&gt;v-if&lt;/code&gt;可以和&lt;code&gt;v-else-if&lt;/code&gt;、&lt;code&gt;v-else&lt;/code&gt;一起使用，但要求结构必须连续，不能被“打断”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v-show&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;写法:&lt;code&gt;v-show&lt;/code&gt;=&amp;ldquo;表达式&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;适用于:切换频率较高的场景。&lt;/li&gt;
+&lt;li&gt;特点:不展示的DOM元素未被移除，仅仅是使用样式隐藏掉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;备注:
+&lt;ul&gt;
+&lt;li&gt;使用&lt;code&gt;v-if&lt;/code&gt;的时，元素可能无法获取到，而使用&lt;code&gt;v-show&lt;/code&gt;一定可以获取到。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;template&lt;/code&gt;不会改变页面结构，但只能配合&lt;code&gt;v-if&lt;/code&gt;使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;12.列表渲染&lt;span class=&#34;absolute -mt-20&#34; id=&#34;12列表渲染&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#12%e5%88%97%e8%a1%a8%e6%b8%b2%e6%9f%93&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;key的基本原理&lt;span class=&#34;absolute -mt-20&#34; id=&#34;key的基本原理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key%e7%9a%84%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1Zy4y1K7SH/?p=30&amp;amp;spm_id_from=pageDriver&amp;amp;vd_source=e2189ba572fe853e13e074f6db34f7de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站讲解：10:30开始&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;面试题:&lt;code&gt;react&lt;/code&gt;、&lt;code&gt;vue&lt;/code&gt;中的&lt;code&gt;key&lt;/code&gt;有什么作用?(&lt;code&gt;key&lt;/code&gt;的内部原理)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;虚拟DOM中&lt;code&gt;key&lt;/code&gt;的作用:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;key是虚拟DOM对象的标识，当状态中的数据发生变化时，Vue会根据**[新数据]&lt;strong&gt;生成&lt;/strong&gt;[新的虚拟DOM]&lt;strong&gt;，随后Vue进行&lt;/strong&gt;[新虚拟DOM]&lt;strong&gt;与&lt;/strong&gt;[旧虚拟DOM]** 的差异比较。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;对比规则:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;旧虚拟DOM中找到了与新虚拟DOM相同的key:
+&lt;ul&gt;
+&lt;li&gt;若虚拟DOM中内容没变，直接使用之前的真实DOM&lt;/li&gt;
+&lt;li&gt;若虚拟DOM中内容变了，则生成新的真实DOM，随后替换掉页面中之前的真实DOM。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;旧虚拟DOM中未找到与新虚拟DOM相同的key，则创建新的真实DOM，随后渲染到到页面。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;用index作为key可能会引发的问题:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;1.若对数据进行逆序添加、逆序删除等破坏顺序操作，会产生没有必要的真实DOM更新 ==&amp;gt; 界面效果没问题，但效率低。&lt;/li&gt;
+&lt;li&gt;2.如果结构中还包含输入类的DOM，会产生错误DOM更新 ==&amp;gt; 界面有问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;开发中如何选择key?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;最好使用每条数据的唯一标识作为key，比如id、手机号、身份证号、学号等唯一值。&lt;/li&gt;
+&lt;li&gt;如果不存在对数据的逆序添加、逆序删除等破坏顺序操作，仅用于渲染列表用于展示使用index作为key是没有问题的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Vue监视数据的原理&lt;span class=&#34;absolute -mt-20&#34; id=&#34;vue监视数据的原理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#vue%e7%9b%91%e8%a7%86%e6%95%b0%e6%8d%ae%e7%9a%84%e5%8e%9f%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;vue会监视data中所有层次的数据&lt;/li&gt;
+&lt;li&gt;如何监测对象中的数据?
+&lt;ol&gt;
+&lt;li&gt;通过&lt;code&gt;setter&lt;/code&gt;实现监视，且要在&lt;code&gt;new Vue&lt;/code&gt;时就传入要监测的数据。&lt;/li&gt;
+&lt;li&gt;对象中后追加的属性，Vue默认不做响应式处理&lt;/li&gt;
+&lt;li&gt;如需给后添加的属性做响应式，请使用如下API: &lt;code&gt;Vue.set(target，propertyName/index，value)&lt;/code&gt; 或&lt;code&gt;vm.$set(target,propertyName/index， value)&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;如何监测数组中的数据?
+&lt;ol&gt;
+&lt;li&gt;通过包裹数组更新元素的方法实现，本质就是做了两件事:
+&lt;ol&gt;
+&lt;li&gt;调用原生对应的方法对数组进行更新。&lt;/li&gt;
+&lt;li&gt;重新解析模板，进而更新页面。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;在Vue修改数组中的某个元素一定要用如下方法:
+&lt;ol&gt;
+&lt;li&gt;使用这些API:&lt;code&gt;push()&lt;/code&gt;、&lt;code&gt;pop()&lt;/code&gt;、&lt;code&gt;shift()&lt;/code&gt;、&lt;code&gt;unshift()&lt;/code&gt;、&lt;code&gt;splice()&lt;/code&gt;、&lt;code&gt;sort()&lt;/code&gt;、&lt;code&gt;reverse()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Vue.set()&lt;/code&gt; 或 &lt;code&gt;vm.$set()&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;特别注意: &lt;code&gt;Vue.set()&lt;/code&gt; 和 &lt;code&gt;vm.$set()&lt;/code&gt; 不能给vm 或 vm的根数据对象添加属性!!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;13.收集表单数据&lt;span class=&#34;absolute -mt-20&#34; id=&#34;13收集表单数据&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#13%e6%94%b6%e9%9b%86%e8%a1%a8%e5%8d%95%e6%95%b0%e6%8d%ae&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;若:&lt;code&gt;&amp;lt;input type=&amp;quot;text”/&amp;gt;&lt;/code&gt;，则&lt;code&gt;v-model&lt;/code&gt;收集的是&lt;code&gt;value&lt;/code&gt;值，用户输入的就是&lt;code&gt;value&lt;/code&gt;值。&lt;/li&gt;
+&lt;li&gt;若:&lt;code&gt;&amp;lt;input type=&amp;quot;radio&amp;quot;/&amp;gt;&lt;/code&gt;，则&lt;code&gt;v-model&lt;/code&gt;收集的是&lt;code&gt;value&lt;/code&gt;值，且要给标签配置&lt;code&gt;value&lt;/code&gt;值.&lt;/li&gt;
+&lt;li&gt;若:&lt;code&gt;&amp;lt;input type=&amp;quot;checkbox&amp;quot;/&amp;gt;&lt;/code&gt;
+&lt;ol&gt;
+&lt;li&gt;没有配置&lt;code&gt;input&lt;/code&gt;的&lt;code&gt;value&lt;/code&gt;属性，那么收集的就是&lt;code&gt;checked&lt;/code&gt;(勾选 or 未勾选，是布尔值)&lt;/li&gt;
+&lt;li&gt;配置input的&lt;code&gt;value&lt;/code&gt;属性:
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;v-model&lt;/code&gt;的初始值是非数组，那么收集的就是&lt;code&gt;checked&lt;/code&gt; (勾选 or 未勾选，是布尔值)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v-model&lt;/code&gt;的初始值是数组，那么收集的的就是&lt;code&gt;value&lt;/code&gt;组成的数组&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;备注: &lt;code&gt;v-model&lt;/code&gt;的三个修饰符:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;lazy&lt;/code&gt;:失去焦点再收集数据&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;number&lt;/code&gt;:输入字符串转为有效的数字&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trim&lt;/code&gt;:输入首尾空格过滤&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;14.VUE内置指令&lt;span class=&#34;absolute -mt-20&#34; id=&#34;14vue内置指令&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#14vue%e5%86%85%e7%bd%ae%e6%8c%87%e4%bb%a4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;v-bind：单向绑定解析表达式，可简写为 :xxx&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;v-model：双向数据绑定&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;v-for：遍历数组/对象/字符串&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;v-on：绑定事件监听，可简写为@&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;v-if：条件渲染（动态控制节点是否存存在）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;v-else：条件渲染（动态控制节点是否存存在）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;v-show：条件渲染（动态控制节点是否存展示）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;v-text指令：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;作用:向其所在的节点中渲染文本内容。&lt;/li&gt;
+&lt;li&gt;与插值语法的区别:v-text会替换掉节点中的内容，{{xx}}则不会。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;v-html指令:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;作用:向指定节点中渲染包含html结构的内容。&lt;/li&gt;
+&lt;li&gt;与插值语法的区别:
+&lt;ol&gt;
+&lt;li&gt;v-html会替换掉节点中所有的内容，{{xx}}则不会。&lt;/li&gt;
+&lt;li&gt;v-html可以识别html结构。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;注意: v-html有安全性问题!! !!
+&lt;ol&gt;
+&lt;li&gt;在网站上动态渲染任意HTML是非常危险的，容易导致XSS攻击。&lt;/li&gt;
+&lt;li&gt;一定要在可信的内容上使用v-html，永不要用在用户提交的内容上!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;v-cloak指令(没有值) :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;本质是一个特殊尿性，Vue实例创建完毕并接管容器后，会删掉v-cloak屁性。&lt;/li&gt;
+&lt;li&gt;使用css配合v-cloak可以解决网速慢时页面展示出{{xxx}}的问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;v-once指令:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;v-once所在节点在初次动态渲染后，就视为静态内容了。&lt;/li&gt;
+&lt;li&gt;以后数据的改变不会引起v-once所在结构的更新，可以用于优化性能。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;v-pre指令:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;跳过其所在节点的编译过程。&lt;/li&gt;
+&lt;li&gt;可利用它跳过:没有使用指令语法、没有使用插值语法的节点，会加快编译。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Vue.js开发过程 Notes</title>
+      <link>https://felixlyd.github.io/lyd-notes/vue/vue.js%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B-notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/vue/vue.js%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B-notes/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;var _that = this的意义&lt;/h1&gt;&lt;p&gt;在 JavaScript 中，当你在一个函数内部访问 &lt;strong&gt;this&lt;/strong&gt; 指针时，它指向的可能不是你预期的对象。这是因为 &lt;strong&gt;this&lt;/strong&gt; 指针的指向取决于函数调用时的上下文。
+在 Vue.js 中，如果你在组件的 methods 中定义了一个函数，那么在函数内部访问 &lt;strong&gt;this&lt;/strong&gt; 指针将指向组件的实例。但是，如果你在函数内部调用了另一个函数，那么此时的 &lt;strong&gt;this&lt;/strong&gt; 指针可能已经指向了另一个对象。
+为了解决这个问题，可以在函数的开头声明一个变量 &lt;strong&gt;_that&lt;/strong&gt;，并将 &lt;strong&gt;this&lt;/strong&gt; 赋值给它，这样你就可以在整个函数中使用 &lt;strong&gt;_that&lt;/strong&gt; 来访问组件实例了。
+例如：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;mounted&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_that&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;setTimeout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;_that&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;message&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Hello&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-0&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这里 setTimeout 是一个异步函数，在回调函数中 this 指向的不是 vue 组件实例，所以需要使用 _that 来保存 this。
+另外在es6中有 &lt;strong&gt;let that = this&lt;/strong&gt;; 或者 使用箭头函数来替代传统的 function 也可以解决 this 指向问题。
+总结，var _that = this主要是为了在函数中保存 this 指向。&lt;/p&gt;
+&lt;h1&gt;await关键字&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;await&lt;/strong&gt; 是一个 JavaScript 关键字，它只能在 &lt;strong&gt;async&lt;/strong&gt; 函数中使用。 &lt;strong&gt;await&lt;/strong&gt; 用于等待一个异步操作（通常是一个 Promise 对象）完成，并返回其结果。
+所以说，&lt;strong&gt;await&lt;/strong&gt; 是用于等待异步请求完成并获取结果的，而不是用于同步请求。
+例如：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;await&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fetch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;https://some-api.com/data&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;await&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-1&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这里的fetch是一个异步的请求，使用await来等待这个请求结束并获取响应数据，这样就可以让程序继续执行下面的代码而不是阻塞程序。
+总结，await是异步请求等待。&lt;/p&gt;
+&lt;h1&gt;Vue项目的一般结构&lt;/h1&gt;&lt;p&gt;Vue.js 项目的一般目录结构如下:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;package&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;json&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;package&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;lock&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;json&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;README&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;md&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;node_modules&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;public&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;favicon&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ico&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;manifest&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;json&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;src&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;assets&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;images&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;styles&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;components&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;views&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;router&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;store&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;App&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;vue&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;js&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dist&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;babel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;js&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;package&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;json&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;README&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;md&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-2&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;主要目录和文件的作用如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;public&lt;/strong&gt;目录: 存放静态资源文件，如 index.html、favicon.ico、manifest.json 等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;src&lt;/strong&gt;目录: 存放项目源代码。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;src/assets&lt;/strong&gt; 目录: 存放静态资源文件，如图片、样式文件等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;src/components&lt;/strong&gt; 目录: 存放 Vue 组件。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;src/views&lt;/strong&gt; 目录: 存放页面组件。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;src/router&lt;/strong&gt; 目录: 存放 Vue 路由配置。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;src/store&lt;/strong&gt; 目录: 存放 Vuex 的状态管理。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;src/App.vue&lt;/strong&gt; 文件: 根组件。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;src/main.js&lt;/strong&gt; 文件: 程序的入口文件。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;dist&lt;/strong&gt; 目录: 打包后的文件。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;babel.config.js&lt;/strong&gt; 文件: Babel 配置文件。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;package.json&lt;/strong&gt; 文件: 项目配置文件。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;README.md&lt;/strong&gt; 文件: 项目说明文件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这是一个大致的目录结构，在实际的开发中，根据项目的不同，可能会有所变化。
+总结，Vue.js 项目的一般目录结构主要包括 public 目录,src目录,dist目录,babel.config.js,package.json,README.md等文件和目录。&lt;/p&gt;
+&lt;h1&gt;箭头函数和普通函数的区别&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;箭头函数&lt;/strong&gt;
+优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;简洁易读。&lt;/li&gt;
+&lt;li&gt;没有自己的 this 上下文，能避免 this 指针混乱。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不能使用 arguments 对象。&lt;/li&gt;
+&lt;li&gt;不能作为构造函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;普通函数&lt;/strong&gt;
+优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以使用 this 和 arguments 对象。&lt;/li&gt;
+&lt;li&gt;可以作为构造函数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可能会出现 this 指针混乱的问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果需要使用 this 和 arguments 对象，或者需要将函数用作构造函数，那么就应该使用普通函数。
+如果只是简单的函数调用，并且不需要使用 this 和 arguments 对象，那么可以使用箭头函数。
+arguments 对象：在不知道函数传入参数的个数的情况下，可以访问所有的参数。&lt;/p&gt;
+&lt;h1&gt;JS中两个等号和三个等号的区别&lt;/h1&gt;&lt;p&gt;JavaScript 中的比较运算符有两种：等于运算符（==）和严格等于运算符（===）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个等号（==）表示的是“相等”，它会在比较之前进行类型转换。&lt;/li&gt;
+&lt;li&gt;三个等号（===）表示的是“严格相等”，它不会进行类型转换。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// true
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// false
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-3&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在上面这个例子中，第一个表达式返回 true，因为在比较之前，字符串 &amp;lsquo;1&amp;rsquo; 被转换成了数字 1。而第二个表达式返回 false，因为它没有进行类型转换。
+综上所述，推荐使用三个等号（===）而不是两个等号（==），因为它更严格，可以避免类型转换带来的错误。
+总结，三个等号（===）表示严格相等，不会进行类型转换，更严格，更安全。&lt;/p&gt;
+&lt;h1&gt;Vue插件和直接导入js的区别&lt;/h1&gt;&lt;p&gt;Vue 插件和直接导入 JavaScript 有以下区别：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Vue 插件是专门为 Vue 构建的，可以更好地集成到 Vue 项目中。而直接导入 JavaScript 可能需要手动进行配置和集成。&lt;/li&gt;
+&lt;li&gt;Vue 插件可以使用 Vue.use() 方法来安装和使用，并且可以根据需要进行配置。而直接导入 JavaScript 则需要在项目中手动配置和使用。&lt;/li&gt;
+&lt;li&gt;Vue 插件可以对 Vue 的实例进行扩展，例如添加全局组件、全局指令等。而直接导入 JavaScript 可能仅仅是一些帮助函数或类库。&lt;/li&gt;
+&lt;li&gt;Vue 插件可以在多个项目中重用，而直接导入的 JavaScript 可能只能在特定的项目中使用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总结，Vue 插件是专门为 Vue 构建的，可以更好地集成到 Vue 项目中，可以通过 Vue.use() 方法来安装和使用，并且可以根据需要进行配置，可以对 Vue 的实例进行扩展，可以在多个项目中重用。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Vue3 Tips</title>
+      <link>https://felixlyd.github.io/lyd-notes/vue/vue3-tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/vue/vue3-tips/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;动态参数&lt;a href=&#34;https://staging-cn.vuejs.org/guide/essentials/template-syntax.html#dynamic-arguments&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;同样在指令参数上也可以使用一个 JavaScript 表达式，需要包含在一对方括号内：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!--&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;注意&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;参数表达式有一些约束&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;参见下面&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;“&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;动态参数表达式约束&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;”&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;一节的解释&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;-bind:[attributeName]&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;=&amp;#34;url&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;简写&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;:[attributeName]&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;=&amp;#34;url&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-0&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这里的 &lt;code&gt;attributeName&lt;/code&gt; 会作为一个 JavaScript 表达式被动态执行，计算得到的值会被用作最终的参数。举个例子，如果你的组件实例有一个数据 property &lt;code&gt;attributeName&lt;/code&gt;，其值为 &lt;code&gt;&amp;quot;href&amp;quot;&lt;/code&gt;，那么这个绑定就等价于 &lt;code&gt;v-bind:href&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;相似地，你还可以将一个函数绑定到动态的事件名称上：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;-on:[eventName]&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;=&amp;#34;doSomething&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;简写&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;@[eventName]&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;=&amp;#34;doSomething&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-1&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在此示例中，当 &lt;code&gt;eventName&lt;/code&gt; 的值是 &lt;code&gt;&amp;quot;focus&amp;quot;&lt;/code&gt; 时，&lt;code&gt;v-on:[eventName]&lt;/code&gt; 就等价于 &lt;code&gt;v-on:focus&lt;/code&gt;。&lt;/p&gt;
+&lt;h2&gt;动态参数值的限制&lt;a href=&#34;https://staging-cn.vuejs.org/guide/essentials/template-syntax.html#dynamic-argument-value-constraints&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#&lt;/a&gt;&lt;span class=&#34;absolute -mt-20&#34; id=&#34;动态参数值的限制httpsstaging-cnvuejsorgguideessentialstemplate-syntaxhtmldynamic-argument-value-constraints&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%8a%a8%e6%80%81%e5%8f%82%e6%95%b0%e5%80%bc%e7%9a%84%e9%99%90%e5%88%b6httpsstaging-cnvuejsorgguideessentialstemplate-syntaxhtmldynamic-argument-value-constraints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;动态参数期望结果为一个字符串，或者是 &lt;code&gt;null&lt;/code&gt;。特殊值 &lt;code&gt;null&lt;/code&gt; 意为显式移除该绑定。任何其他非字符串的值都将触发一个警告。&lt;/p&gt;
+&lt;h2&gt;动态参数语法的限制&lt;a href=&#34;https://staging-cn.vuejs.org/guide/essentials/template-syntax.html#dynamic-argument-syntax-constraints&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#&lt;/a&gt;&lt;span class=&#34;absolute -mt-20&#34; id=&#34;动态参数语法的限制httpsstaging-cnvuejsorgguideessentialstemplate-syntaxhtmldynamic-argument-syntax-constraints&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%8a%a8%e6%80%81%e5%8f%82%e6%95%b0%e8%af%ad%e6%b3%95%e7%9a%84%e9%99%90%e5%88%b6httpsstaging-cnvuejsorgguideessentialstemplate-syntaxhtmldynamic-argument-syntax-constraints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;动态参数表达式因为某些字符的缘故有一些语法限制，比如空格和引号，在 HTML attribute 名称中都是不合法的。例如下面的示例：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;这会触发一个编译器警告&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;[&amp;#39;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;bar&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;]=&amp;#34;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-2&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果你需要传入一个复杂的动态参数，我们推荐使用&lt;a href=&#34;https://staging-cn.vuejs.org/guide/essentials/computed.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;计算属性&lt;/a&gt;替换复杂的表达式，也是 Vue 最基础的概念之一，我们很快就会讲到。&lt;/p&gt;
+&lt;p&gt;当使用 &lt;strong&gt;DOM 内嵌模板&lt;/strong&gt; (直接写在 HTML 文件里的模板) 时，我们需要&lt;strong&gt;避免在名称中使用大写字母&lt;/strong&gt;，因为浏览器会强制将其转换为小写：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;:[someAttr]&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;=&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-3&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;上面的例子将会在 DOM 内嵌模板中被转换为 &lt;code&gt;:[someattr]&lt;/code&gt;。如果你的组件拥有 “someAttr” property 而非 “someattr”，这段代码将不会工作。&lt;/p&gt;
+&lt;h1&gt;组件基础&lt;a href=&#34;https://staging-cn.vuejs.org/guide/essentials/component-basics.html#components-basics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&lt;h2&gt;组件#&lt;span class=&#34;absolute -mt-20&#34; id=&#34;组件&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e7%bb%84%e4%bb%b6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;在component属性中，&lt;code&gt;method&lt;/code&gt;属性没有缓存机制，&lt;code&gt;compute&lt;/code&gt;属性则有缓存机制。&lt;/p&gt;
+&lt;h2&gt;props#&lt;span class=&#34;absolute -mt-20&#34; id=&#34;props&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#props&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;更改对象 / 数组类型的 props&lt;a href=&#34;https://cn.vuejs.org/guide/components/props.html#mutating-object-array-props&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#&lt;/a&gt;&lt;span class=&#34;absolute -mt-20&#34; id=&#34;更改对象--数组类型的-propshttpscnvuejsorgguidecomponentspropshtmlmutating-object-array-props&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%9b%b4%e6%94%b9%e5%af%b9%e8%b1%a1--%e6%95%b0%e7%bb%84%e7%b1%bb%e5%9e%8b%e7%9a%84-propshttpscnvuejsorgguidecomponentspropshtmlmutating-object-array-props&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;当对象或数组作为 props 被传入时，虽然子组件无法更改 props 绑定，但仍然&lt;strong&gt;可以&lt;/strong&gt;更改对象或数组内部的值。这是因为 JavaScript 的对象和数组是按引用传递，而对 Vue 来说，禁止这样的改动虽然可能，但有很大的性能损耗，比较得不偿失。
+这种更改的主要缺陷是它允许了子组件以某种不明显的方式影响父组件的状态，可能会使数据流在将来变得更难以理解。在最佳实践中，你应该尽可能避免这样的更改，除非父子组件在设计上本来就需要紧密耦合。在大多数场景下，子组件应该&lt;a href=&#34;https://cn.vuejs.org/guide/components/events.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;抛出一个事件&lt;/a&gt;来通知父组件做出改变。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

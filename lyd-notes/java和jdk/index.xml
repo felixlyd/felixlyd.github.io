@@ -1,0 +1,190 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Felixlyd – Java和JDK</title>
+    <link>https://felixlyd.github.io/lyd-notes/java%E5%92%8Cjdk/</link>
+    <description>Recent content in Java和JDK on Felixlyd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	  <atom:link href="https://felixlyd.github.io/lyd-notes/java%E5%92%8Cjdk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Java技术栈选择初级指南</title>
+      <link>https://felixlyd.github.io/lyd-notes/java%E5%92%8Cjdk/java%E6%8A%80%E6%9C%AF%E6%A0%88%E9%80%89%E6%8B%A9%E5%88%9D%E7%BA%A7%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/java%E5%92%8Cjdk/java%E6%8A%80%E6%9C%AF%E6%A0%88%E9%80%89%E6%8B%A9%E5%88%9D%E7%BA%A7%E6%8C%87%E5%8D%97/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/164977456&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;一文读懂Eureka，Feign，Ribbon，Hystrix，Zuul核心组件间的关系&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;限流和熔断：Sentinel、Hystrix、Resillience4j&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;参考：&lt;/strong&gt;
+书籍《spring cloud微服务架构 实战派》龙中华-电子工业出版社-P157&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Sentinel&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Hystrix&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Resilience4j&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;隔离策略&lt;/td&gt;
+&lt;td&gt;信号量隔离(并发线程数限流)&lt;/td&gt;
+&lt;td&gt;线程池隔离/信号量隔离&lt;/td&gt;
+&lt;td&gt;信号量隔离&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;熔断降级策略&lt;/td&gt;
+&lt;td&gt;基于响应时间、异常比率、异常数&lt;/td&gt;
+&lt;td&gt;基于异常比率&lt;/td&gt;
+&lt;td&gt;基于异常比率、响应时间&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;实时统计实现&lt;/td&gt;
+&lt;td&gt;滑动窗口(LeapArray)&lt;/td&gt;
+&lt;td&gt;滑动窗口(基于RxJava)&lt;/td&gt;
+&lt;td&gt;环形缓冲器（Ring Bit Buffer）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;动态规则配置&lt;/td&gt;
+&lt;td&gt;支持多种数据源&lt;/td&gt;
+&lt;td&gt;支持多种数据源&lt;/td&gt;
+&lt;td&gt;有限支持&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;扩展性&lt;/td&gt;
+&lt;td&gt;多个扩展点&lt;/td&gt;
+&lt;td&gt;插件的形式&lt;/td&gt;
+&lt;td&gt;接口的形式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;基于注解的支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;限流&lt;/td&gt;
+&lt;td&gt;基于QPS,支持基于调用关系的限流&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;有限的支持&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;rate limit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;流量整形&lt;/td&gt;
+&lt;td&gt;支持预热模式、匀速器模式、预热排队模式&lt;/td&gt;
+&lt;td&gt;不支持&lt;/td&gt;
+&lt;td&gt;简单的Rate Limiter模式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;系统自适应保护&lt;/td&gt;
+&lt;td&gt;支持&lt;/td&gt;
+&lt;td&gt;不支持&lt;/td&gt;
+&lt;td&gt;不支持&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;控制台&lt;/td&gt;
+&lt;td&gt;提供开箱即用的控制台，可配置规则、查看秒级监控、机器发现等&lt;/td&gt;
+&lt;td&gt;简单的监控查看&lt;/td&gt;
+&lt;td&gt;不提供控制台，可对接其他监控系统&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1&gt;微服务网关：Zuul、Spring Cloud Gateway&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;参考：&lt;/strong&gt;
+&lt;a href=&#34;https://juejin.cn/post/7063244165538119710&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;微服务网关对比和选型：Zuul、Spring Cloud GetWay、Kong和Traefik - 掘金&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/299068076&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Spring Cloud Gateway VS Zuul 比较，怎么选择？&lt;/a&gt;
+书籍《spring cloud微服务架构 实战派》龙中华-电子工业出版社-P172&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;组件&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Zuul 1.x&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Spring Cloud Gateway&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;底层实现&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Servlet 2.5&lt;/td&gt;
+&lt;td&gt;Spring 5+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;API特点&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;阻塞式API、不支持websockets&lt;/td&gt;
+&lt;td&gt;非阻塞式API、支持websockets&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;请求方式&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;同步请求&lt;/td&gt;
+&lt;td&gt;异步请求&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;服务器&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;tomcat&lt;/td&gt;
+&lt;td&gt;netty（不支持tomcat）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;WebSockets 它可以在用户的浏览器和服务器之间打开交互式通信会话。在WebSocket API中，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;spring cloud gateway&lt;/strong&gt;实现了熔断和限流&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Zuul 2.x&lt;/strong&gt; 在底层上有了很大的改变，使用了异步无阻塞式的 API，性能改善明显，不过&lt;strong&gt;现在 Spring Cloud 也没集成 Zuul 2.x&lt;/strong&gt;，也无计划整合Zuul2.x.
+Netflix旗下产品均进入漫长的停更期，知名产品有eureka、hystrix、zuul、ribbon. 在spring cloud 2021更新后，除了eureka仍在使用，其他产品均不再支持。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;eureka从1.x于2022年12月升级到了2.x，但此次更新并非Netflix官方，而是由spring完成. eureka2.x最低springboot版本要求3.x&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/138943446&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;spring cloud zuul 原理简介及使用&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;基础工具类：Guava、Hutool&lt;/h1&gt;&lt;h1&gt;JSON处理：JackSon&lt;/h1&gt;&lt;h1&gt;安全：Spring Security、Sa-Token&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/ybeYeVC4L319d7rcawpLFw&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10 种保证接口数据安全的方案！&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;日志：Logback、Log4j2&lt;/h1&gt;&lt;h1&gt;接口文档：Swagger-UI、Knife4j&lt;/h1&gt;&lt;h1&gt;负载均衡：ribbon&lt;/h1&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;序号&lt;/th&gt;
+&lt;th&gt;实现类&lt;/th&gt;
+&lt;th&gt;负载均衡策略&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;RoundRobinRule&lt;/td&gt;
+&lt;td&gt;按照线性轮询策略，即按照一定的顺序依次选取服务实例&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;RandomRule&lt;/td&gt;
+&lt;td&gt;随机选取一个服务实例&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;RetryRule&lt;/td&gt;
+&lt;td&gt;按照 RoundRobinRule（轮询）的策略来获取服务，如果获取的服务实例为 null 或已经失效，则在指定的时间之内不断地进行重试（重试时获取服务的策略还是 RoundRobinRule 中定义的策略），如果超过指定时间依然没获取到服务实例则返回 null 。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;WeightedResponseTimeRule&lt;/td&gt;
+&lt;td&gt;WeightedResponseTimeRule 是 RoundRobinRule 的一个子类，它对 RoundRobinRule 的功能进行了扩展。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;根据平均响应时间，来计算所有服务实例的权重，响应时间越短的服务实例权重越高，被选中的概率越大。刚启动时，如果统计信息不足，则使用线性轮询策略，等信息足够时，再切换到 WeightedResponseTimeRule。 |
+| 5 | BestAvailableRule | 继承自 ClientConfigEnabledRoundRobinRule。先过滤点故障或失效的服务实例，然后再选择并发量最小的服务实例。 |
+| 6 | AvailabilityFilteringRule | 先过滤掉故障或失效的服务实例，然后再选择并发量较小的服务实例。 |
+| 7 | ZoneAvoidanceRule | 默认的负载均衡策略，综合判断服务所在区域（zone）的性能和服务（server）的可用性，来选择服务实例。在没有区域的环境下，该策略与轮询（RandomRule）策略类似。 |&lt;/p&gt;
+&lt;h1&gt;Excel处理：easyExcel、Apache poi&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_42083036/article/details/116750910&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;关于阿里easyExcel和poi的差异_easyexcel与poi优劣_博渊同学的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://easyexcel.opensource.alibaba.com/docs/current/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;关于Easyexcel | Easy Excel&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/alibaba/easyexcel&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub - alibaba/easyexcel: 快速、简洁、解决大文件内存溢出的java处理Excel工具&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

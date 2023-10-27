@@ -1,0 +1,311 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Felixlyd – 批量处理</title>
+    <link>https://felixlyd.github.io/lyd-notes/5.%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/</link>
+    <description>Recent content in 批量处理 on Felixlyd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	  <atom:link href="https://felixlyd.github.io/lyd-notes/5.%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Spring batch Notes</title>
+      <link>https://felixlyd.github.io/lyd-notes/5.%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/spring-batch-notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/5.%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/spring-batch-notes/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;JobRepository&lt;/h1&gt;&lt;p&gt;&lt;code&gt;JobRepository&lt;/code&gt;是Spring Batch中一个关键的组件，负责管理任务执行信息的持久性。它提供了一个中央位置来存储批处理作业的执行信息，如作业执行的开始时间、结束时间和状态。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;JobRepository&lt;/code&gt;的主要目的是提供一种将任务执行信息持久化的方法，以便在后面可以用于分析或重新运行。存储在&lt;code&gt;JobRepository&lt;/code&gt;中的任务执行信息可用于确定作业的状态、识别在作业执行期间发生的错误以及重新运行失败的作业。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;JobRepository&lt;/code&gt;可以使用不同的存储机制实现,比如数据库和内存映射等。Spring Batch提供了内置的&lt;code&gt;JobRepository&lt;/code&gt;实现，可将任务执行信息存储在数据库中，可以通过设置数据源和使用Spring Batch提供的SQL脚本在数据库中创建必要的表来配置。&lt;/p&gt;
+&lt;p&gt;使用JobRepository需要在Spring Batch应用程序配置文件中配置它，并定义一个&lt;code&gt;PlatformTransactionManager&lt;/code&gt;来管理事务。之后，可以在批处理作业中使用&lt;code&gt;JobRepository&lt;/code&gt;来更新作业的状态和检索有关过去作业执行的信息。&lt;/p&gt;
+&lt;p&gt;总之，&lt;code&gt;JobRepository&lt;/code&gt;是Spring Batch中负责管理任务执行信息持久性的组件，它用来存储批处理作业的执行信息，如开始时间、结束时间和状态。这些信息可以用来分析任务执行情况，并帮助我们决定是否需要重新运行任务,可以使用不同的存储机制来实现，如数据库和内存映射等, 为了使用&lt;code&gt;JobRepository&lt;/code&gt;，需要在Spring Batch应用程序配置文件中配置数据源，并使用Spring Batch提供的SQL脚本在数据库中创建必要的表, 之后可以在批处理作业中使用&lt;code&gt;JobRepository&lt;/code&gt;来更新作业的状态和检索有关过去作业执行的信息。需要注意的是，在使用&lt;code&gt;JobRepository&lt;/code&gt;时需要配置&lt;code&gt;PlatformTransactionManager&lt;/code&gt;来管理事务, 保证数据的持久性和一致性。&lt;/p&gt;
+&lt;p&gt;When using java configuration, a &lt;code&gt;JobRepository&lt;/code&gt; is provided for you. A JDBC based one is provided out of the box if a &lt;code&gt;DataSource&lt;/code&gt; is provided, the &lt;code&gt;Map&lt;/code&gt; based one if not. However you can customize the configuration of the &lt;code&gt;JobRepository&lt;/code&gt; via an implementation of the &lt;code&gt;BatchConfigurer&lt;/code&gt; interface.&lt;/p&gt;
+&lt;p&gt;When using &lt;code&gt;@EnableBatchProcessing&lt;/code&gt;, a &lt;code&gt;JobRegistry&lt;/code&gt; is provided out of the box for you. This section addresses configuring your own.&lt;/p&gt;
+&lt;p&gt;The most basic implementation of the &lt;code&gt;JobLauncher&lt;/code&gt; interface is the &lt;code&gt;SimpleJobLauncher&lt;/code&gt;. Its only required dependency is a &lt;code&gt;JobRepository&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../Pasted%20image%2020231027170426.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h1&gt;JobLauncher&lt;/h1&gt;&lt;p&gt;&lt;code&gt;JobLauncher&lt;/code&gt;是Spring Batch中用来启动作业的组件。它提供了一种简单的方式来启动作业，并且可以传递参数给作业，比如&lt;code&gt;JobParameters&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;JobLauncher&lt;/code&gt;的主要目的是提供一种简单的方式来启动作业，并且可以传递参数给作业。它提供了&lt;code&gt;run()&lt;/code&gt;方法来启动作业，这个方法接收两个参数，一个是要启动的作业的名称，另一个是用来传递给作业的参数。&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;JobLauncher&lt;/code&gt;需要在Spring Batch应用程序配置文件中创建它的一个实例。之后，可以使用&lt;code&gt;JobLauncher&lt;/code&gt;来启动作业。&lt;/p&gt;
+&lt;p&gt;下面是一个在Spring Batch应用程序配置文件中使用JobLauncher的示例：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Autowired&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;JobLauncher&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jobLauncher&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Autowired&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Job&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;job&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;runJob&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;throws&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Exception&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;JobParameters&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jobParameters&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;JobParametersBuilder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;addString&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;input.file&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;input.txt&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;toJobParameters&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;jobLauncher&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;job&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jobParameters&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-0&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在这个例子中，在配置类中创建了一个&lt;code&gt;JobLauncher&lt;/code&gt;的实例并进行自动装配，然后&lt;code&gt;runJob()&lt;/code&gt;方法使用&lt;code&gt;JobLauncher&lt;/code&gt;来启动作业, 传递了一个&lt;code&gt;JobParameters&lt;/code&gt;参数给作业，这个参数可以在作业中使用。&lt;/p&gt;
+&lt;p&gt;总之, &lt;code&gt;JobLauncher&lt;/code&gt;是Spring Batch中用来启动作业的组件, 提供了一种简单的方式来启动作业，并且可以传递参数给作业，使用方法是在应用程序配置文件中创建实例并使用&lt;code&gt;run()&lt;/code&gt;方法来启动作业。&lt;/p&gt;
+&lt;h2&gt;Running a job&lt;span class=&#34;absolute -mt-20&#34; id=&#34;running-a-job&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#running-a-job&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;At a minimum, launching a batch job requires two things: the &lt;code&gt;Job&lt;/code&gt; to be launched and a &lt;code&gt;JobLauncher&lt;/code&gt;. Both can be contained within the same context or different contexts. For example, if launching a job from the command line, a new JVM will be instantiated for each Job, and thus every job will have its own &lt;code&gt;JobLauncher&lt;/code&gt;. However, if running from within a web container within the scope of an &lt;code&gt;HttpRequest&lt;/code&gt;, there will usually be one &lt;code&gt;JobLauncher&lt;/code&gt;, configured for asynchronous job launching, that multiple requests will invoke to launch their jobs.&lt;/p&gt;
+&lt;p&gt;如果是将spring-batch结合到web container，则需要一个异步job&lt;code&gt;Asynchronous Job&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Historically, offline processing such as batch jobs have been launched from the command-line, as described above. However, there are many cases where launching from an &lt;code&gt;HttpRequest&lt;/code&gt; is a better option. Many such use cases include reporting, ad-hoc job running, and web application support. Because a batch job by definition is long running, the most important concern is ensuring to launch the job asynchronously:&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../Pasted%20image%2020231027170436.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h1&gt;Step&lt;/h1&gt;&lt;h2&gt;1. Chunk-oriented Processing&lt;span class=&#34;absolute -mt-20&#34; id=&#34;1-chunk-oriented-processing&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-chunk-oriented-processing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;参考1：&lt;a href=&#34;https://docs.spring.io/spring-batch/docs/4.2.x/reference/html/step.html#chunkOrientedProcessing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chunk-oriented Processing官方相关文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;参考2：&lt;a href=&#34;https://gitee.com/felixlyd/spring-batch-demo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;demo项目&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;1. 只需要读和写：&lt;span class=&#34;absolute -mt-20&#34; id=&#34;1-只需要读和写&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-%e5%8f%aa%e9%9c%80%e8%a6%81%e8%af%bb%e5%92%8c%e5%86%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;
+    &lt;img src=&#34;../Pasted%20image%2020231027170444.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h3&gt;2. 读、处理、写：&lt;span class=&#34;absolute -mt-20&#34; id=&#34;2-读处理写&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-%e8%af%bb%e5%a4%84%e7%90%86%e5%86%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;
+    &lt;img src=&#34;../Pasted%20image%2020231027170454.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h2&gt;2. TaskletStep&lt;span class=&#34;absolute -mt-20&#34; id=&#34;2-taskletstep&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-taskletstep&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://docs.spring.io/spring-batch/docs/4.2.x/reference/html/step.html#chunkOrientedProcessing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chunk-oriented processing&lt;/a&gt; is not the only way to process in a &lt;code&gt;Step&lt;/code&gt;. What if a &lt;code&gt;Step&lt;/code&gt; must consist of a simple stored procedure call? You could implement the call as an &lt;code&gt;ItemReader&lt;/code&gt; and return null after the procedure finishes. However, doing so is a bit unnatural, since there would need to be a no-op &lt;code&gt;ItemWriter&lt;/code&gt;. Spring Batch provides the &lt;code&gt;TaskletStep&lt;/code&gt; for this scenario.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Tasklet&lt;/code&gt; is a simple interface that has one method, &lt;code&gt;execute&lt;/code&gt;, which is called repeatedly by the &lt;code&gt;TaskletStep&lt;/code&gt; until it either returns &lt;code&gt;RepeatStatus.FINISHED&lt;/code&gt; or throws an exception to signal a failure. Each call to a &lt;code&gt;Tasklet&lt;/code&gt; is wrapped in a transaction. &lt;code&gt;Tasklet&lt;/code&gt; implementors might &lt;strong&gt;call a stored procedure, a script, or a simple SQL update statement.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To create a &lt;code&gt;TaskletStep&lt;/code&gt;, the bean passed to the &lt;code&gt;tasklet&lt;/code&gt; method of the builder should implement the &lt;code&gt;Tasklet&lt;/code&gt; interface. No call to &lt;code&gt;chunk&lt;/code&gt; should be called when building a &lt;code&gt;TaskletStep&lt;/code&gt;. The following example shows a simple tasklet:&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Step&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;step1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;stepBuilderFactory&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;step1&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    			&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;tasklet&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;myTasklet&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    			&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-1&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.spring.io/spring-batch/docs/4.2.x/reference/html/step.html#taskletStep&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TaskletStep官方相关文档&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;3. 使用场景&lt;span class=&#34;absolute -mt-20&#34; id=&#34;3-使用场景&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Tasklet 适用于该 Step 操作不需要读操作，或不需要写操作，或两者都不需要。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;而Chunk则适用于典型的Read、Process、Write 操作。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;官网的介绍中提到，如果你的步骤包含一个简单的存储过程调用（只存，不需要写），那就可以用Tasklet。当然，你也可以用Chunk，但这时，你的ItemWritter就是一个空实现，看着不自然。&lt;/p&gt;
+&lt;p&gt;而官网的Tasklet例子只对文件进行删除，不需要读、写文件的内容，因此使用Tasklet也就非常合适了。&lt;/p&gt;
+&lt;h1&gt;MapJobRepositoryFactoryBean和JobRepositoryFactoryBean&lt;/h1&gt;&lt;p&gt;&lt;code&gt;MapJobRepositoryFactoryBean&lt;/code&gt;和&lt;code&gt;JobRepositoryFactoryBean&lt;/code&gt;是Spring Batch提供的两个工厂类，用来创建JobRepository实例。两者的主要区别在于它们使用的&lt;strong&gt;存储机制不同&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MapJobRepositoryFactoryBean&lt;/code&gt;用来创建一个使用&lt;strong&gt;内存映射存储&lt;/strong&gt;任务执行信息的JobRepository实例。这意味着任务执行信息不会在应用程序的不同运行之间持久化，只能在当前应用程序实例中使用。这通常用于开发或测试环境，在这些环境中不需要数据持久化。&lt;/p&gt;
+&lt;p&gt;而&lt;code&gt;JobRepositoryFactoryBean&lt;/code&gt;用来创建一个使用&lt;strong&gt;数据库存储&lt;/strong&gt;任务执行信息的JobRepository实例。这意味着任务执行信息可以在应用程序的不同运行之间持久化，可以在以后检索分析或重新运行。这通常用于生产环境，需要数据持久化。&lt;/p&gt;
+&lt;p&gt;总的来说, 如果不需要数据持久化，可以使用&lt;code&gt;MapJobRepositoryFactoryBean&lt;/code&gt;，否则使用&lt;code&gt;JobRepositoryFactoryBean&lt;/code&gt;更好。&lt;/p&gt;
+&lt;h1&gt;PlatformTransactionManager&lt;/h1&gt;&lt;p&gt;&lt;code&gt;PlatformTransactionManager&lt;/code&gt;是Spring Batch中一个关键的组件，主要用于提供批处理作业的事务管理。它负责管理批处理作业的事务边界，如在作业开始前启动新事务，在作业完成后提交或回滚事务。&lt;/p&gt;
+&lt;p&gt;其中主要作用是保证批处理作业处理的数据的一致性和完整性。通过在作业开始前启动一个事务，并在作业完成后提交或回滚事务， &lt;code&gt;PlatformTransactionManager&lt;/code&gt;能确保在作业期间对数据进行的所有修改都能被完全提交或完全回滚，即使在发生错误或失败的情况下也是如此。&lt;/p&gt;
+&lt;p&gt;另一个用途是通过减少数据库提交次数来提高批处理作业的性能。通过在单个事务中包装多个数据库操作， &lt;code&gt;PlatformTransactionManager&lt;/code&gt;可以大大减少数据库提交次数，提高批处理作业的性能。
+&lt;code&gt;PlatformTransactionManager&lt;/code&gt;通常与其他Spring Batch组件，如&lt;code&gt;JobRepository&lt;/code&gt;和&lt;code&gt;ItemWriter&lt;/code&gt;结合使用，为批处理作业提供完整的事务管理解决方案。&lt;/p&gt;
+&lt;p&gt;总之, &lt;code&gt;PlatformTransactionManager&lt;/code&gt;负责管理批处理作业的事务边界，用来保证批处理作业处理的数据的一致性和完整性，并且通过减少数据库提交次数来提高批处理作业的性能。&lt;/p&gt;
+&lt;h1&gt;JobBuilderFactory&lt;/h1&gt;&lt;p&gt;&lt;code&gt;JobBuilderFactory&lt;/code&gt;是Spring Batch提供的一个工厂类,用来创建&lt;code&gt;JobBuilder&lt;/code&gt;的实例。&lt;code&gt;JobBuilder&lt;/code&gt;是一个帮助类，用于配置和构建Job实例。&lt;code&gt;JobBuilderFactory&lt;/code&gt;通常用于Spring Batch应用程序的配置中，用来创建和配置Job实例。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;JobBuilderFactory&lt;/code&gt;的主要目的是提供一种简洁方便的方式来创建和配置Job实例。它提供了一些方法来配置Job的各个方面，&lt;strong&gt;如名称、要使用的&lt;/strong&gt;&lt;code&gt;**JobRepository**&lt;/code&gt;&lt;strong&gt;和要使用的&lt;/strong&gt;&lt;code&gt;**JobExecutionListener**&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;JobBuilderFactory&lt;/code&gt;需要在Spring Batch应用程序配置文件中创建它的一个实例。之后，可以使用&lt;code&gt;JobBuilderFactory&lt;/code&gt;来创建和配置Job实例， 可以通过调用它的方法来实现。&lt;/p&gt;
+&lt;p&gt;下面是一个在Spring Batch应用程序配置文件中使用&lt;code&gt;JobBuilderFactory&lt;/code&gt;的示例：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Autowired&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;JobBuilderFactory&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jobBuilderFactory&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Job&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;job1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jobBuilderFactory&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;job1&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;start&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;step1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-2&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在这个例子中，在配置类中创建了一个&lt;code&gt;JobBuilderFactory&lt;/code&gt;的实例并进行自动装配，然后job1()方法使用&lt;code&gt;JobBuilderFactory&lt;/code&gt;创建和配置了名为&lt;code&gt;&amp;quot;job1&amp;quot;&lt;/code&gt;的Job实例，并且这个Job实例只有一个step &lt;code&gt;&amp;quot;step1&amp;quot;&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;总之, &lt;code&gt;JobBuilderFactory&lt;/code&gt; 是 Spring Batch 提供的工厂类，用来创建和配置 Job 实例，提供了一种简洁方便的方式来创建和配置 Job 实例, 通过调用它的方法来实现。&lt;/p&gt;
+&lt;h1&gt;StepBuilderFactory&lt;/h1&gt;&lt;p&gt;&lt;code&gt;StepBuilderFactory&lt;/code&gt;是Spring Batch提供的一个工厂类, 用来创建&lt;code&gt;StepBuilder&lt;/code&gt;的实例。StepBuilder是一个帮助类，用于配置和构建Step实例。&lt;code&gt;StepBuilderFactory&lt;/code&gt;通常用于Spring Batch应用程序的配置中，用来创建和配置Step实例。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;StepBuilderFactory&lt;/code&gt;的主要目的是提供一种简洁方便的方式来创建和配置Step实例。它提供了一些方法来配置Step的各个方面，如名称，要执行的tasklet，以及要使用的&lt;code&gt;ItemReader&lt;/code&gt;, &lt;code&gt;ItemProcessor&lt;/code&gt;,和&lt;code&gt;ItemWriter&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;StepBuilderFactory&lt;/code&gt;需要在Spring Batch应用程序配置文件中创建它的一个实例。之后，可以使用&lt;code&gt;StepBuilderFactory&lt;/code&gt;来创建和配置Step实例, 通过调用它的方法来实现。&lt;/p&gt;
+&lt;p&gt;下面是一个在Spring Batch应用程序配置文件中使用&lt;code&gt;StepBuilderFactory&lt;/code&gt;的示例：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Autowired&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;StepBuilderFactory&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;stepBuilderFactory&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Step&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;step1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;stepBuilderFactory&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;step1&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;o&#34;&gt;.&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;chunk&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;reader&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;itemReader&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;processor&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;itemProcessor&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;writer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;itemWriter&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-3&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在这个例子中，在配置类中创建了一个&lt;code&gt;StepBuilderFactory&lt;/code&gt;的实例并进行自动装配，然后step1()方法使用&lt;code&gt;StepBuilderFactory&lt;/code&gt;创建和配置了名为&lt;code&gt;&amp;quot;step1&amp;quot;&lt;/code&gt;的Step实例,并且这个Step实例的&lt;code&gt;chunk&lt;/code&gt;的大小为10, &lt;code&gt;reader&lt;/code&gt;, &lt;code&gt;processor&lt;/code&gt;, &lt;code&gt;writer&lt;/code&gt; 是 &lt;code&gt;itemReader()&lt;/code&gt;, &lt;code&gt;itemProcessor()&lt;/code&gt;, &lt;code&gt;itemWriter()&lt;/code&gt;
+总之，&lt;code&gt;StepBuilderFactory&lt;/code&gt;是Spring Batch提供的工厂类，用来创建和配置Step实例，提供了一种简洁方便的方式来创建和配置Step实例，通过调用它的方法来实现。&lt;/p&gt;
+&lt;h1&gt;JobExplorer&lt;/h1&gt;&lt;p&gt;&lt;code&gt;JobExplorer&lt;/code&gt;是Spring Batch中的一个重要接口，主要作用是&lt;strong&gt;查询和检索作业的执行状态和历史信息&lt;/strong&gt;。它主要&lt;strong&gt;用于支持监控和管理作业的运行状态&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;JobExplorer提供了很多方法，可以查询作业执行的状态，例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;getJobNames()：获取所有作业名称。&lt;/li&gt;
+&lt;li&gt;getJobInstance(JobInstance jobInstance)：根据JobInstance查询作业实例。&lt;/li&gt;
+&lt;li&gt;getJobExecutions(JobInstance jobInstance)：根据JobInstance查询作业执行。&lt;/li&gt;
+&lt;li&gt;getStepExecutions(JobExecution jobExecution)：根据JobExecution查询步骤执行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;JobExplorer&lt;/code&gt; 一般是和 &lt;code&gt;JobRepository&lt;/code&gt; 配合使用， &lt;code&gt;**JobRepository**&lt;/code&gt;&lt;strong&gt;负责维护作业状态， &lt;strong&gt;&lt;code&gt;**JobExplorer**&lt;/code&gt;&lt;/strong&gt; 则用于查询和检索这些状态&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;在实际项目中，您可以使用&lt;code&gt;JobExplorer&lt;/code&gt;查询作业的运行状态，并在需要时对其进行重启或停止。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>XXL-JOB框架使用</title>
+      <link>https://felixlyd.github.io/lyd-notes/5.%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/xxl-job%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/5.%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/xxl-job%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/</guid>
+      <description>
+        
+        
+        &lt;ol&gt;
+&lt;li&gt;依赖于Spring-boot时，通过xxl-job的注解&lt;code&gt;@XxlJob&lt;/code&gt;来注册&lt;code&gt;JobHandler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;xxl-job-core&lt;/code&gt;是一个依赖库，&lt;code&gt;xxl-job-admin&lt;/code&gt;是一个可视化的web网页，&lt;code&gt;xxl-job-executor-samples&lt;/code&gt;是执行器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;xxl-job&lt;/code&gt;的框架使用即在该项目中改写或增加&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;“调度中心”平台自身不承担业务逻辑，负责&lt;code&gt;调度&lt;/code&gt;；任务抽象分散成&lt;code&gt;JobHandler&lt;/code&gt;，交由执行器&lt;code&gt;JobExecutor&lt;/code&gt;统一管理，负责&lt;code&gt;任务&lt;/code&gt;
+
+    &lt;img src=&#34;../Pasted%20image%2020231027170358.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;xxl-job&lt;/code&gt;使用的自研调度模块，早于&lt;code&gt;Quartz&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考：&lt;a href=&#34;https://www.xuxueli.com/xxl-job/#%E4%B8%89%E3%80%81%E4%BB%BB%E5%8A%A1%E8%AF%A6%E8%A7%A3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;XXL-JOB&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;一、调度模块剖析&lt;span class=&#34;absolute -mt-20&#34; id=&#34;一调度模块剖析&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%80%e8%b0%83%e5%ba%a6%e6%a8%a1%e5%9d%97%e5%89%96%e6%9e%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;1 quartz的不足&lt;span class=&#34;absolute -mt-20&#34; id=&#34;1-quartz的不足&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-quartz%e7%9a%84%e4%b8%8d%e8%b6%b3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Quartz作为开源作业调度中的佼佼者，是作业调度的首选。但是集群环境中Quartz采用API的方式对任务进行管理，从而可以避免上述问题，但是同样存在以下问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;问题一：调用API的的方式操作任务，不人性化；&lt;/li&gt;
+&lt;li&gt;问题二：需要持久化业务QuartzJobBean到底层数据表中，系统侵入性相当严重。&lt;/li&gt;
+&lt;li&gt;问题三：调度逻辑和QuartzJobBean耦合在同一个项目中，这将导致一个问题，在调度任务数量逐渐增多，同时调度任务逻辑逐渐加重的情况下，此时调度系统的性能将大大受限于业务；&lt;/li&gt;
+&lt;li&gt;问题四：quartz底层以“抢占式”获取DB锁并由抢占成功节点负责运行任务，会导致节点负载悬殊非常大；而XXL-JOB通过执行器实现“协同分配式”运行任务，充分发挥集群优势，负载各节点均衡。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;XXL-JOB弥补了quartz的上述不足之处。&lt;/p&gt;
+&lt;h4&gt;2 自研调度模块&lt;span class=&#34;absolute -mt-20&#34; id=&#34;2-自研调度模块&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-%e8%87%aa%e7%a0%94%e8%b0%83%e5%ba%a6%e6%a8%a1%e5%9d%97&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;XXL-JOB最终选择自研调度组件（早期调度组件基于Quartz）；一方面是为了精简系统降低冗余依赖，另一方面是为了提供系统的可控度与稳定性；&lt;/p&gt;
+&lt;p&gt;XXL-JOB中“调度模块”和“任务模块”完全解耦，调度模块进行任务调度时，将会解析不同的任务参数发起远程调用，调用各自的远程执行器服务。这种调用模型类似RPC调用，调度中心提供调用代理的功能，而执行器提供远程服务的功能。&lt;/p&gt;
+&lt;h4&gt;3 调度中心HA（集群）&lt;span class=&#34;absolute -mt-20&#34; id=&#34;3-调度中心ha集群&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-%e8%b0%83%e5%ba%a6%e4%b8%ad%e5%bf%83ha%e9%9b%86%e7%be%a4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;基于数据库的集群方案，数据库选用Mysql；集群分布式并发环境中进行定时任务调度时，会在各个节点会上报任务，存到数据库中，执行时会从数据库中取出触发器来执行，如果触发器的名称和执行时间相同，则只有一个节点去执行此任务。&lt;/p&gt;
+&lt;h4&gt;4 调度线程池&lt;span class=&#34;absolute -mt-20&#34; id=&#34;4-调度线程池&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-%e8%b0%83%e5%ba%a6%e7%ba%bf%e7%a8%8b%e6%b1%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;调度采用线程池方式实现，避免单线程因阻塞而引起任务调度延迟。&lt;/p&gt;
+&lt;h4&gt;5 并行调度&lt;span class=&#34;absolute -mt-20&#34; id=&#34;5-并行调度&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-%e5%b9%b6%e8%a1%8c%e8%b0%83%e5%ba%a6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;XXL-JOB调度模块默认采用并行机制，在多线程调度的情况下，调度模块被阻塞的几率很低，大大提高了调度系统的承载量。&lt;/p&gt;
+&lt;p&gt;XXL-JOB的不同任务之间并行调度、并行执行。&lt;/p&gt;
+&lt;p&gt;XXL-JOB的单个任务，针对多个执行器是并行运行的，针对单个执行器是串行执行的。同时支持任务终止。&lt;/p&gt;
+&lt;h4&gt;6 过期处理策略&lt;span class=&#34;absolute -mt-20&#34; id=&#34;6-过期处理策略&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#6-%e8%bf%87%e6%9c%9f%e5%a4%84%e7%90%86%e7%ad%96%e7%95%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;任务调度错过触发时间时的处理策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可能原因：服务重启；调度线程被阻塞，线程被耗尽；上次调度持续阻塞，下次调度被错过；&lt;/li&gt;
+&lt;li&gt;处理策略：
+&lt;ul&gt;
+&lt;li&gt;过期超5s：本次忽略，当前时间开始计算下次触发时间&lt;/li&gt;
+&lt;li&gt;过期5s内：立即触发一次，当前时间开始计算下次触发时间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;7 日志回调服务&lt;span class=&#34;absolute -mt-20&#34; id=&#34;7-日志回调服务&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#7-%e6%97%a5%e5%bf%97%e5%9b%9e%e8%b0%83%e6%9c%8d%e5%8a%a1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;调度模块的“调度中心”作为Web服务部署时，一方面承担调度中心功能，另一方面也为执行器提供API服务。&lt;/p&gt;
+&lt;h4&gt;8 调度日志&lt;span class=&#34;absolute -mt-20&#34; id=&#34;8-调度日志&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#8-%e8%b0%83%e5%ba%a6%e6%97%a5%e5%bf%97&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;调度中心每次进行任务调度，都会记录一条任务日志，任务日志主要包括以下三部分内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;任务信息：包括“执行器地址”、“JobHandler”和“执行参数”等属性，点击任务ID按钮可查看，根据这些参数，可以精确的定位任务执行的具体机器和任务代码；&lt;/li&gt;
+&lt;li&gt;调度信息：包括“调度时间”、“调度结果”和“调度日志”等，根据这些参数，可以了解“调度中心”发起调度请求时具体情况。&lt;/li&gt;
+&lt;li&gt;执行信息：包括“执行时间”、“执行结果”和“执行日志”等，根据这些参数，可以了解在“执行器”端任务执行的具体情况；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;调度日志，针对单次调度，属性说明如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;执行器地址：任务执行的机器地址；&lt;/li&gt;
+&lt;li&gt;JobHandler：Bean模式表示任务执行的JobHandler名称；&lt;/li&gt;
+&lt;li&gt;任务参数：任务执行的入参；&lt;/li&gt;
+&lt;li&gt;调度时间：调度中心，发起调度的时间；&lt;/li&gt;
+&lt;li&gt;调度结果：调度中心，发起调度的结果，SUCCESS或FAIL；&lt;/li&gt;
+&lt;li&gt;调度备注：调度中心，发起调度的备注信息，如地址心跳检测日志等；&lt;/li&gt;
+&lt;li&gt;执行时间：执行器，任务执行结束后回调的时间；&lt;/li&gt;
+&lt;li&gt;执行结果：执行器，任务执行的结果，SUCCESS或FAIL；&lt;/li&gt;
+&lt;li&gt;执行备注：执行器，任务执行的备注信息，如异常日志等；&lt;/li&gt;
+&lt;li&gt;执行日志：任务执行过程中，业务代码中打印的完整执行日志，见“4.8 查看执行日志”；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;10 任务依赖&lt;span class=&#34;absolute -mt-20&#34; id=&#34;10-任务依赖&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#10-%e4%bb%bb%e5%8a%a1%e4%be%9d%e8%b5%96&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;原理：XXL-JOB中每个任务都对应有一个任务ID，同时，每个任务支持设置属性“子任务ID”，因此，通过“任务ID”可以匹配任务依赖关系。&lt;/p&gt;
+&lt;p&gt;当父任务执行结束并且执行成功时，将会根据“子任务ID”匹配子任务依赖，如果匹配到子任务，将会主动触发一次子任务的执行。&lt;/p&gt;
+&lt;p&gt;在任务日志界面，点击任务的“执行备注”的“查看”按钮，可以看到匹配子任务以及触发子任务执行的日志信息，如无信息则表示未触发子任务执行，可参考下图。
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2022/png/22002231/1670481700493-332b0749-17b5-4119-ae8d-8d837d45a5f9.png#averageHue=%23f7f4f4&amp;amp;clientId=uab54d6c9-826f-4&amp;amp;from=paste&amp;amp;height=205&amp;amp;id=ua23728e3&amp;amp;originHeight=308&amp;amp;originWidth=2142&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=82282&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=ufe40bac7-c8b8-4135-8f76-85e12867646&amp;amp;title=&amp;amp;width=1428&#34; alt=&#34;img_Wb2o.png&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../Pasted%20image%2020231027170410.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h4&gt;11 执行器&lt;span class=&#34;absolute -mt-20&#34; id=&#34;11-执行器&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#11-%e6%89%a7%e8%a1%8c%e5%99%a8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;执行器实际上是一个内嵌的Server，默认端口9999（配置项：xxl.job.executor.port）。&lt;/p&gt;
+&lt;p&gt;在项目启动时，执行器会通过“&lt;a href=&#34;https://github.com/JobHandler&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@JobHandler&lt;/a&gt;”识别Spring容器中“Bean模式任务”，以注解的value属性为key管理起来。&lt;/p&gt;
+&lt;p&gt;“执行器”接收到“调度中心”的调度请求时，如果任务类型为“Bean模式”，将会匹配Spring容器中的“Bean模式任务”，然后调用其execute方法，执行任务逻辑。如果任务类型为“GLUE模式”，将会加载GLue代码，实例化Java对象，注入依赖的Spring服务（注意：Glue代码中注入的Spring服务，必须存在与该“执行器”项目的Spring容器中），然后调用execute方法，执行任务逻辑。&lt;/p&gt;
+&lt;h3&gt;二、任务注册, 任务自动发现&lt;span class=&#34;absolute -mt-20&#34; id=&#34;二任务注册-任务自动发现&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%8c%e4%bb%bb%e5%8a%a1%e6%b3%a8%e5%86%8c-%e4%bb%bb%e5%8a%a1%e8%87%aa%e5%8a%a8%e5%8f%91%e7%8e%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;自v1.5版本之后, 任务取消了”任务执行机器”属性, 改为通过任务注册和自动发现的方式, 动态获取远程执行器地址并执行。&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; AppName: 每个执行器机器集群的唯一标示, 任务注册以 &amp;#34;执行器&amp;#34; 为最小粒度进行注册; 每个任务通过其绑定的执行器可感知对应的执行器机器列表;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;2.&lt;/span&gt; 注册表: 见&amp;#34;xxl_job_registry&amp;#34;表, &amp;#34;执行器&amp;#34; 在进行任务注册时将会周期性维护一条注册记录，即机器地址和AppName的绑定关系; &amp;#34;调度中心&amp;#34; 从而可以动态感知每个AppName在线的机器列表;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;3.&lt;/span&gt; 执行器注册: 任务注册Beat周期默认30s; 执行器以一倍Beat进行执行器注册, 调度中心以一倍Beat进行动态任务发现; 注册信息的失效时间为三倍Beat; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4. 执行器注册摘除：执行器销毁时，将会主动上报调度中心并摘除对应的执行器机器信息，提高心跳注册的实时性；&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-0&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;为保证系统”轻量级”并且降低学习部署成本，没有采用Zookeeper作为注册中心，采用DB方式进行任务注册发现；&lt;/p&gt;
+&lt;h3&gt;三、执行器灰度上线&lt;span class=&#34;absolute -mt-20&#34; id=&#34;三执行器灰度上线&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%89%e6%89%a7%e8%a1%8c%e5%99%a8%e7%81%b0%e5%ba%a6%e4%b8%8a%e7%ba%bf&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;调度中心与业务解耦，只需部署一次后常年不需要维护。但是，执行器中托管运行着业务作业，作业上线和变更需要重启执行器，尤其是Bean模式任务。&lt;/p&gt;
+&lt;p&gt;执行器重启可能会中断运行中的任务。但是，XXL-JOB得益于自建执行器与自建注册中心，可以通过灰度上线的方式，避免因重启导致的任务中断的问题。
+步骤如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1、执行器改为手动注册，下线一半机器列表（A组），线上运行另一半机器列表（B组）；&lt;/li&gt;
+&lt;li&gt;2、等待A组机器任务运行结束并编译上线；执行器注册地址替换为A组；&lt;/li&gt;
+&lt;li&gt;3、等待B组机器任务运行结束并编译上线；执行器注册地址替换为A组+B组；
+操作结束；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;四、任务超时控制&lt;span class=&#34;absolute -mt-20&#34; id=&#34;四任务超时控制&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%9b%9b%e4%bb%bb%e5%8a%a1%e8%b6%85%e6%97%b6%e6%8e%a7%e5%88%b6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;支持设置任务超时时间，任务运行超时的情况下，将会主动中断任务；&lt;/p&gt;
+&lt;p&gt;需要注意的是，任务超时中断时与任务终止机制（可查看“4.9 终止运行中的任务”）类似，也是通过 “interrupt” 中断任务，因此业务代码需要将 “InterruptedException” 外抛，否则功能不可用。&lt;/p&gt;
+&lt;h3&gt;五、命令行任务&lt;span class=&#34;absolute -mt-20&#34; id=&#34;五命令行任务&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%94%e5%91%bd%e4%bb%a4%e8%a1%8c%e4%bb%bb%e5%8a%a1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;原生提供通用命令行任务Handler（Bean任务，”CommandJobHandler”）；业务方只需要提供命令行即可；&lt;/p&gt;
+&lt;p&gt;如任务参数 “pwd” 将会执行命令并输出数据；&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,302 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Felixlyd – 接口设计</title>
+    <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/</link>
+    <description>Recent content in 接口设计 on Felixlyd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	  <atom:link href="https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>接口安全设计</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8%E8%AE%BE%E8%AE%A1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;需要使用国密算法，查阅网上资料，需引入Bouncy Castle依赖&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.bouncycastle&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;bcprov-jdk15to18&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.69&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-0&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;并引入hutools-crypto来使用SM2，SM3，SM4
+&lt;a href=&#34;https://hutool.cn/docs/#/crypto/%E5%9B%BD%E5%AF%86%E7%AE%97%E6%B3%95%E5%B7%A5%E5%85%B7-SmUtil&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hutool参考文档-国密算法工具-SmUtil&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 生成sm4的key
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;byte&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;key&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SecureUtil&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;generateKey&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;SM4&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getEncoded&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sm4KeyBase64&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Base64&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getEncoder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;encodeToString&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sm4KeyBase64U&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sm4k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getBytes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;StandardCharsets&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;UTF_8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 生成sm2的key值对
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;KeyPair&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pair&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SecureUtil&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;generateKeyPair&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;SM2&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;byte&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;privateKey&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pair&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getPrivate&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getEncoded&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;privateKeyBase64&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Base64&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getEncoder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;encodeToString&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;privateKey&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;privateKeyBase64U&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;privateKeyS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getBytes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;StandardCharsets&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;UTF_8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;byte&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;publicKey&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pair&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getPublic&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getEncoded&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;publicKeyBase64&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Base64&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getEncoder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;encodeToString&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;publicKey&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;publicKeyBase64U&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;publicKeyS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getBytes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;StandardCharsets&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;UTF_8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-1&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1&gt;字符集，编码解码，加解密&lt;/h1&gt;&lt;p&gt;字符集是bytes和string互相转换，如果字符集没选好，就容易出乱码。一般用UTF_8.
+编码一般有Hex(Base16)和Base64，编码解码是为了避免有一些特殊字符，影响传输。 Base64UrlSafe（可以避免url中特殊字符出问题）
+加解密是为了避免信息泄漏。&lt;/p&gt;
+&lt;h1&gt;前后端编码方式选择&lt;/h1&gt;&lt;p&gt;前端
+后端hutools-crypto、Bouncy Castle，既可以base16，又可以base64.
+&lt;a href=&#34;https://zhuanlan.zhihu.com/p/502392648&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hex,base64,urlencode编码方案对比&lt;/a&gt;
+
+    &lt;img src=&#34;../%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a11.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;
+
+    &lt;img src=&#34;../%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a12.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;
+SM4算法主要包含5种基本模式：ECB、CBC、CFB、OFB，CTR（后4种都是ECB算法模块衍生而来）；与MAC结合还诞生了GCM，CCM等高级模式。
+&lt;a href=&#34;https://blog.csdn.net/leho666/article/details/114313463&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SM4分组密码算法介绍_浩雪峰的博客-CSDN博客_sm4分组密码算法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;考虑性能和安全性，没有一种模式是绝对的最优选择，不同的模式适用于不同的应用场景。
+&lt;a href=&#34;https://blog.csdn.net/u013073067/article/details/87086562&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;分组加密模式 ECB、CBC、PCBC、CFB、OFB、CTR_fengwang0301的博客-CSDN博客_分组密码ecb模式&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a13.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h2&gt;补码padding&lt;span class=&#34;absolute -mt-20&#34; id=&#34;补码padding&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e8%a1%a5%e7%a0%81padding&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;SM4中的padding是指在加密前对明文进行填充，使其长度为16字节的整数倍，因为SM4是一种分组密码，每个分组的长度为16字节。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;不同的padding方式有不同的填充规则，常见的有PADDING_PKCS5、PADDING_PKCS7、PADDING_ISO10126、PADDING_ANSI_X923等。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;填充的目的是为了保证密文的完整性和一致性，同时也可以防止一些攻击，例如重放攻击和填充攻击。&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SM4用什么padding比较好，取决于你的加密模式和数据格式。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一般来说，如果你使用的是ECB模式或者CBC模式，那么你需要对明文进行padding，因为这两种模式要求明文的长度是16字节的倍数。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你使用的是CFB模式、OFB模式或者CTR模式，那么你不需要对明文进行padding，因为这三种模式可以将分组密码转化为流密码，可以对任意长度的明文进行加密。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;常见的padding方式有PADDING_PKCS5、PADDING_PKCS7、PADDING_ISO10126、PADDING_ANSI_X923等，它们的区别主要在于填充的字节的值和验证的方式。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;PADDING_PKCS5和PADDING_PKCS7的填充方式是在明文的末尾添加N个字节，每个字节的值都是N，其中N是从1到16的整数，表示需要填充的字节数。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;PADDING_ISO10126的填充方式是在明文的末尾添加N个字节，其中最后一个字节的值是N，其余的字节的值是随机的。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;PADDING_ANSI_X923的填充方式是在明文的末尾添加N个字节，其中最后一个字节的值是N，其余的字节的值都是0。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在解密的时候，需要根据填充的字节的值来判断填充的字节数，然后去掉填充的字节，恢复原始的明文。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你的数据格式是二进制的，那么你可以选择任意一种padding方式，只要加密和解密的时候保持一致即可。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你的数据格式是文本的，那么你最好选择PADDING_PKCS5或者PADDING_PKCS7，因为这两种方式可以避免填充的字节和原始的明文的字符冲突，导致解密的时候出错。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;综上所述，SM4用什么padding比较好，没有一个确定的答案，你需要根据你的具体的需求和场景来选择合适的padding方式。&lt;a href=&#34;https://aks.jd.com/doc/mobiledoc/sm4-suan-fa/sm4ecb-padding.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1&lt;/a&gt;&lt;a href=&#34;https://blog.csdn.net/wjb123sw99/article/details/105015933&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;加密&lt;/h1&gt;&lt;p&gt;&lt;del&gt;方式1：对每个json字段进行加密？&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;方式2：对整个请求报文进行加密（网金）请求报文本身是一个JSON，然后加密了之后以参数形式传递。&lt;/p&gt;
+&lt;h2&gt;前端-请求加密&lt;span class=&#34;absolute -mt-20&#34; id=&#34;前端-请求加密&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%89%8d%e7%ab%af-%e8%af%b7%e6%b1%82%e5%8a%a0%e5%af%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;js SM4对称加密&lt;/p&gt;
+&lt;h2&gt;后端-请求解密&lt;span class=&#34;absolute -mt-20&#34; id=&#34;后端-请求解密&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%90%8e%e7%ab%af-%e8%af%b7%e6%b1%82%e8%a7%a3%e5%af%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;java SM4对称解密&lt;/p&gt;
+&lt;h2&gt;后端-响应加密&lt;span class=&#34;absolute -mt-20&#34; id=&#34;后端-响应加密&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%90%8e%e7%ab%af-%e5%93%8d%e5%ba%94%e5%8a%a0%e5%af%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;java SM4对称加密&lt;/p&gt;
+&lt;h2&gt;前端-响应解密&lt;span class=&#34;absolute -mt-20&#34; id=&#34;前端-响应解密&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%89%8d%e7%ab%af-%e5%93%8d%e5%ba%94%e8%a7%a3%e5%af%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;js SM4对称解密&lt;/p&gt;
+&lt;h1&gt;数据防重放&lt;/h1&gt;&lt;h2&gt;&lt;del&gt;方案1：预请求&lt;/del&gt;&lt;span class=&#34;absolute -mt-20&#34; id=&#34;方案1预请求&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%96%b9%e6%a1%881%e9%a2%84%e8%af%b7%e6%b1%82&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;预请求，获取redis中的某个随机数；然后，根据随机数去访问接口，就会清掉redis的key-value. 通过这种方式进行防止数据重放。&lt;/p&gt;
+&lt;p&gt;没有redis，只能放在数据库中，并且需要设计两个请求，每个请求涉及DB的写操作，建议用方案2.&lt;/p&gt;
+&lt;h2&gt;方案2：timestamp + nonce 方案&lt;span class=&#34;absolute -mt-20&#34; id=&#34;方案2timestamp--nonce-方案&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%96%b9%e6%a1%882timestamp--nonce-%e6%96%b9%e6%a1%88&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/ybeYeVC4L319d7rcawpLFw&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10 种保证接口数据安全的方案！&lt;/a&gt;
+时间戳超时机制也是有漏洞的，如果是在&lt;strong&gt;时间差内&lt;/strong&gt;，黑客进行的重放攻击，那就不好使了。可以使用&lt;code&gt;timestamp + nonce&lt;/code&gt;方案。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nonce&lt;/code&gt;指唯一的随机字符串，用来标识每个被签名的请求。我们可以将每次请求的&lt;code&gt;nonce&lt;/code&gt;参数存储到一个“set 集合”中，或者可以 json 格式存储到&lt;strong&gt;数据库或缓存&lt;/strong&gt;中。每次处理 HTTP 请求时，首先判断该请求的&lt;code&gt;nonce&lt;/code&gt;参数是否在该“集合”中，如果存在则认为是非法请求。&lt;/p&gt;
+&lt;p&gt;然而对服务器来说，永久保存&lt;code&gt;nonce&lt;/code&gt;的代价是非常大的。可以结合&lt;code&gt;timestamp&lt;/code&gt;来优化。因为&lt;code&gt;timstamp&lt;/code&gt;参数对于超过&lt;code&gt;3min&lt;/code&gt;的请求，都认为是非法请求，所以我们只需要存储&lt;code&gt;3min&lt;/code&gt;的&lt;code&gt;nonce&lt;/code&gt;参数的“集合”即可。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;方案&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;优点&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;缺点&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;数据库&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;完全防重放&lt;/td&gt;
+&lt;td&gt;每次需要查询DB，速率慢；需要写定时任务清理nonce；改造量大&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;本地缓存&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;速率快；缓存失效机制自动清理；改造少&lt;/td&gt;
+&lt;td&gt;假设有n台机器，重放攻击可以到达n次。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;不同缓存框架比较&lt;span class=&#34;absolute -mt-20&#34; id=&#34;不同缓存框架比较&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%8d%e5%90%8c%e7%bc%93%e5%ad%98%e6%a1%86%e6%9e%b6%e6%af%94%e8%be%83&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/109226599&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;（很全面）SpringBoot 使用 Caffeine 本地缓存&lt;/a&gt;
+&lt;a href=&#34;https://sunitc.dev/2020/08/27/springboot-implement-caffeine-cache/#2.3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SpringBoot: Implement caching with Caffeine.&lt;/a&gt;
+&lt;a href=&#34;https://blog.csdn.net/Wu_Shang001/article/details/107743748&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Spring Cache的使用教程：注解形式和api接口形式，以及调用内部方法注解失效的原因_不如敲代码的博客-CSDN博客&lt;/a&gt;
+
+    &lt;img src=&#34;../%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a14.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h1&gt;数据防篡改&lt;/h1&gt;&lt;p&gt;数据报文加签验签，是&lt;strong&gt;保证数据传输安全的常用手段&lt;/strong&gt;，它可以保证数据在&lt;strong&gt;传输过程中不被篡改&lt;/strong&gt;。以前我做的&lt;strong&gt;企业转账系统&lt;/strong&gt;，就用了加签验签。
+&lt;a href=&#34;https://blog.csdn.net/qq_32332777/article/details/120325985&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;签名/验签时，将参数名ASCII码从小到大排序_vamViolet的博客-CSDN博客_参数名ascii码从小到大排序&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;2.1 什么是加签验签呢？&lt;span class=&#34;absolute -mt-20&#34; id=&#34;21-什么是加签验签呢&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#21-%e4%bb%80%e4%b9%88%e6%98%af%e5%8a%a0%e7%ad%be%e9%aa%8c%e7%ad%be%e5%91%a2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数据加签&lt;/strong&gt;：用 Hash算法（SM3）把原始请求参数生成报文摘要，然后用私钥对这个摘要进行加密，就得到这个报文对应的数字签名sign（这个过程就是&lt;strong&gt;加签&lt;/strong&gt;）。通常来说，请求方会把&lt;strong&gt;数字签名和报文原文&lt;/strong&gt;一并发送给接收方。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a15.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;验签&lt;/strong&gt;：接收方拿到原始报文和数字签名（sign）后，用**同一个 Hash 算法（**比如都用 SM3）从报文中生成摘要 A。另外，用对方提供的公钥对数字签名进行解密，得到摘要 B，对比 A 和 B 是否相同，就可以得知报文有没有被篡改过。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a16.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;其实&lt;strong&gt;加签&lt;/strong&gt;，按我的理解，就是把请求参数，按照一定规则，利用hash算法+加密算法生成一个&lt;strong&gt;唯一标签&lt;/strong&gt;sign。&lt;strong&gt;验签的话&lt;/strong&gt;，就是把请求参数按照相同的规则处理，再用相同的hash算法，和对应的密钥解密处理，以对比这个签名是否一致。&lt;/p&gt;
+&lt;h1&gt;请求报文参考&lt;/h1&gt;&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;timestamp&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;xxxx&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;nonce&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;xxxx&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;sign&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;xxxxxxxxxxxxxxx&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-2&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1&gt;数据安全处理-最终方案&lt;/h1&gt;&lt;h2&gt;报文密文处理-SM4&lt;span class=&#34;absolute -mt-20&#34; id=&#34;报文密文处理-sm4&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%8a%a5%e6%96%87%e5%af%86%e6%96%87%e5%a4%84%e7%90%86-sm4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;前端对请求报文加密，后端对请求报文解密；&lt;/li&gt;
+&lt;li&gt;后端对响应报文加密，前端对响应报文解密&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;将整个报文体加密为一个密文字符串&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/u013073067/article/details/87086562&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;分组加密模式 ECB、CBC、PCBC、CFB、OFB、CTR_fengwang0301的博客-CSDN博客_分组密码ecb模式&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;ECB&lt;span class=&#34;absolute -mt-20&#34; id=&#34;ecb&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ecb&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;ECB模式加密过程
+
+    &lt;img src=&#34;../%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a17.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;ECB模式解密过程&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a17.1.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h3&gt;CBC&lt;span class=&#34;absolute -mt-20&#34; id=&#34;cbc&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cbc&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;CBC模式加密过程&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a18.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;CBC模式解密过程&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a19.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h2&gt;数据防重放&lt;span class=&#34;absolute -mt-20&#34; id=&#34;数据防重放-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%95%b0%e6%8d%ae%e9%98%b2%e9%87%8d%e6%94%be-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;timestamp + nonce 方案&lt;span class=&#34;absolute -mt-20&#34; id=&#34;timestamp--nonce-方案&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#timestamp--nonce-%e6%96%b9%e6%a1%88&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;nonce&lt;/code&gt;指唯一的随机字符串，用来标识每个被签名的请求。我们可以将每次请求的&lt;code&gt;nonce&lt;/code&gt;参数存储到一个“set 集合”中，或者可以 json 格式存储到&lt;strong&gt;数据库或缓存&lt;/strong&gt;中。每次处理 HTTP 请求时，首先判断该请求的&lt;code&gt;nonce&lt;/code&gt;参数是否在该“集合”中，如果存在则认为是非法请求。
+然而对服务器来说，永久保存&lt;code&gt;nonce&lt;/code&gt;的代价是非常大的。可以结合&lt;code&gt;timestamp&lt;/code&gt;来优化。因为&lt;code&gt;timstamp&lt;/code&gt;参数对于超过&lt;code&gt;3min&lt;/code&gt;的请求，都认为是非法请求，所以我们只需要存储&lt;code&gt;3min&lt;/code&gt;的&lt;code&gt;nonce&lt;/code&gt;参数的“集合”即可。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;方案&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;优点&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;缺点&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;nonce放到数据库&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;完全防重放&lt;/td&gt;
+&lt;td&gt;每次需要查询DB，速率慢；需要写定时任务清理nonce；改造量大&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;nonce放到本地缓存&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;速率快；缓存失效机制自动清理；改造少&lt;/td&gt;
+&lt;td&gt;假设有n台机器，重放攻击可以到达n次。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;数据签名和验签&lt;span class=&#34;absolute -mt-20&#34; id=&#34;数据签名和验签&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%95%b0%e6%8d%ae%e7%ad%be%e5%90%8d%e5%92%8c%e9%aa%8c%e7%ad%be&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数据加签&lt;/strong&gt;：原始报文按Key值排序（ASCALL码），处理成类似a=1&amp;amp;b=2的字符串，再用 Hash算法（&lt;strong&gt;SM3&lt;/strong&gt;）把原始请求参数生成报文摘要，就得到这个报文对应的数字签名sign（这个过程就是&lt;strong&gt;加签&lt;/strong&gt;）。通常来说，请求方会把&lt;strong&gt;数字签名和报文原文密文&lt;/strong&gt;一并发送给接收方。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../yuque_%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a110.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;验签&lt;/strong&gt;：接收方拿到原始报文和数字签名（sign）后，用**同一个 Hash 算法（**比如都用 &lt;strong&gt;SM3&lt;/strong&gt;）从报文中生成摘要 A。对比 A 和 请求的数字签名 是否相同，就可以得知报文有没有被篡改过。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../yuque_%e6%8e%a5%e5%8f%a3%e5%ae%89%e5%85%a8%e8%ae%be%e8%ae%a111.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>接口安全设计思路</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</guid>
+      <description>
+        
+        
+        &lt;blockquote&gt;
+&lt;p&gt;前后端分离的应用中，接口调用的安全性如何保证？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;前后端分离的应用中，可以使用以下方法来保证接口调用的安全性：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;身份认证：使用用户名和密码或者其他身份验证机制来确保只有授权的用户才能访问接口。&lt;/li&gt;
+&lt;li&gt;授权：使用角色或权限控制，确保用户只能访问其拥有权限的资源。&lt;/li&gt;
+&lt;li&gt;加密：使用 HTTPS 加密通信来保护数据传输过程中的隐私。&lt;/li&gt;
+&lt;li&gt;签名：在请求中添加签名，防止数据被篡改。&lt;/li&gt;
+&lt;li&gt;限流：限制单位时间内允许的请求次数，防止恶意攻击。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/svg/22002231/1674110322411-26cc794f-a7bb-442e-abfe-3af6e4f73bd2.svg#clientId=ud48b6963-dd36-4&amp;amp;from=paste&amp;amp;id=u836b5679&amp;amp;originHeight=30&amp;amp;originWidth=30&amp;amp;originalType=url&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=78&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u81f276b2-25e2-44c9-8c4a-c3590bfcac5&amp;amp;title=&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不能通过限制ip的方式进行吗？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;限制 IP 地址是一种常用的方式来保护接口的安全性。 通过限制访问接口的 IP 地址范围，可以防止非法用户或攻击者访问接口。 但是这种方式有一定的缺点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;IP 地址可能会变化，如果限制的 IP 地址范围不准确或不能及时更新，可能会导致合法用户无法访问。&lt;/li&gt;
+&lt;li&gt;通过代理服务器或 VPN 访问接口时， IP 地址会发生变化，导致限制失效。&lt;/li&gt;
+&lt;li&gt;黑客可以通过欺骗 IP 地址来绕过限制。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因此，限制 IP 地址可能是一种有效的保护接口安全性的方式，但并不能完全保证接口的安全性，应该与其他安全措施相结合使用。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如何设计签名，避免签名的伪造？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;签名是一种常用的方式来防止数据被篡改，但如果签名不能有效防止伪造，就会失去保护数据完整性的意义。因此，为了避免签名的伪造，需要设计一种机制来确保签名的有效性。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用私钥加密：在请求数据中添加签名时，使用私钥加密，只有拥有私钥的服务器才能解密并验证签名的有效性。&lt;/li&gt;
+&lt;li&gt;添加时间戳：在请求数据中添加时间戳，防止签名被重放攻击。&lt;/li&gt;
+&lt;li&gt;签名的字段限制：限制签名的字段，只对必要的字段进行签名，防止签名被篡改。&lt;/li&gt;
+&lt;li&gt;不要在请求中暴露私钥：避免在请求中暴露私钥，防止私钥被盗用。&lt;/li&gt;
+&lt;li&gt;限制签名的次数：限制签名的使用次数，防止签名被重复使用。&lt;/li&gt;
+&lt;li&gt;使用标准算法签名：使用高强度的算法，例如: HMAC-SHA256，RSA-SHA256等进行签名&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;使用以上方法结合，可以有效防止签名被伪造，保证请求数据的完整性。
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/svg/22002231/1674110322397-16443ef5-2ab0-4ddb-a620-f6466b725f16.svg#clientId=ud48b6963-dd36-4&amp;amp;from=paste&amp;amp;id=u2e71fd6f&amp;amp;originHeight=30&amp;amp;originWidth=30&amp;amp;originalType=url&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=78&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u4a069bb5-f447-420d-bf8b-a36245878a0&amp;amp;title=&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;假设前端使用vue写，然后用私钥加密，这样代码不就暴露在网页中了吗？是否有办法避免？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;使用私钥加密签名是一种常用的方式，但在前端使用 Vue 时确实存在私钥泄露的风险。因为前端代码会被打包成 JavaScript 文件，在网页中可以被直接访问，如果私钥被泄露，就会导致签名被伪造。
+针对这种情况，可以使用以下几种方式来避免私钥泄露：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;后端提供签名服务：将签名的操作移到后端服务器上进行，前端只需要将请求数据发送给后端，由后端服务器进行签名。这样私钥就不会被暴露在前端代码中了。&lt;/li&gt;
+&lt;li&gt;使用混淆工具：使用混淆工具来混淆前端代码，使得私钥在网页中看起来是一堆乱码，防止被人直接读取。&lt;/li&gt;
+&lt;li&gt;使用动态签名：使用动态签名，每次请求都生成新的签名，防止签名被重复使用&lt;/li&gt;
+&lt;li&gt;使用对称加密+非对称加密：使用非对称加密来加密私钥，使用对称加密来加密请求数据，这样私钥就不会被暴露在前端代码中了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些方式都可以有效避免私钥泄露的风险，
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/svg/22002231/1674110323114-d7de3f51-d093-4b35-86ac-1cd9c4ba2aba.svg#clientId=ud48b6963-dd36-4&amp;amp;from=paste&amp;amp;id=uf0fa9912&amp;amp;originHeight=30&amp;amp;originWidth=30&amp;amp;originalType=url&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=78&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=ucc70efd7-cedf-4a72-a61b-b27ca64e927&amp;amp;title=&#34; alt=&#34;image.png&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;继续&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;并且保证签名的有效性。
+需要注意的是, 除了第一种方式，其他方法都有可能会被高技能的黑客绕过，所以不能完全依赖这些方法来保证签名的安全性。最好的做法是结合多种安全措施来保证签名的安全性。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

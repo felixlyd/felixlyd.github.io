@@ -1,0 +1,452 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Felixlyd – 系统设计方案</title>
+    <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/</link>
+    <description>Recent content in 系统设计方案 on Felixlyd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	  <atom:link href="https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>规则引擎</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E8%A7%84%E5%88%99%E5%BC%95%E6%93%8E/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E8%A7%84%E5%88%99%E5%BC%95%E6%93%8E/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://www.w3cschool.cn/urule/urule-lr1p34ja.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;7.交叉决策表_w3cschool&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_33449307/article/details/118738932&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;打造高效的规则引擎_规则引擎技术架构_兢兢业业的子牙的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://bbs.csdn.net/topics/190114675&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;规则引擎与工作流的区别在于？-CSDN社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.talkwithtrend.com/Question/389743?order=rec&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;规则引擎与工作流引擎区别是什么，使用规则引擎该注意什么 - 问答 - twt企业IT交流平台&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://xie.infoq.cn/article/91fa1b493237ed3470c9936b0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Java最强规则引擎-ice是如何炼成的？_规则引擎使用_waitmoon_InfoQ写作社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/80e4134aa1bd&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;规则引擎[Drools] + 流程引擎&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ityouknow/drools-examples&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ityouknow / drools-examples&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tallate.github.io/6ce879b3.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;规则引擎&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>交易系统</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://cloud.tencent.com/developer/article/1522823&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;如何实现一个TCC分布式事务框架的一点思考 - 腾讯云开发者社区-腾讯云&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://blogxin.cn/2020/02/16/Distributed-Transaction-1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;从零开始写一个分布式事务框架(一) | 佑祺’s Blog&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;seata&lt;/h1&gt;&lt;h2&gt;spring-cloud-seata&lt;span class=&#34;absolute -mt-20&#34; id=&#34;spring-cloud-seata&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#spring-cloud-seata&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/allentofight/easy-cs/blob/main/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%EF%BC%8C%E7%9C%8B%E8%BF%99%E7%AF%87%E7%9C%9F%E7%9A%84%E5%A4%9F%E4%BA%86!.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;easy-cs/分布式事务，看这篇真的够了!.md at main · allentofight/easy-cs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/seata/seata-samples&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub - seata/seata-samples: seata-samples&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/seata/seata-samples/tree/master/tcc/dubbo-tcc-sample&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;seata-samples/tcc/dubbo-tcc-sample at master · seata/seata-samples&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://wjhsh.net/liqbk-p-13643790.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;95&amp;ndash;分布式事务六-Seata TCC模式-Spring Cloud微服务案例（添加TCC事务）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/w1014074794/article/details/116131139&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Seata TCC模式实战_斗者_2013的博客-CSDN博客_seate tcc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/285136393&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;使用Seata彻底解决Spring Cloud中的分布式事务问题！&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;交易系统设计&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;http://www.360doc.com/content/21/0319/08/67344805_967743864.shtml&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;核心银行系统 之五 7X24小时不间断运行的核心系统设计&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.tencent.com/developer/article/1522935&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;堪称最详细的支付系统设计 - 腾讯云开发者社区-腾讯云&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.tencent.com/developer/article/1848180&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;如何实现下单的幂等性 - 腾讯云开发者社区-腾讯云&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/linsongbin1/article/details/79446880&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;创建订单实现幂等的一点思考_Sam_Deep_Thinking的博客-CSDN博客_订单幂等性&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.itechlib.com/2016/08/04/accounting-transaction-consistency-design-overview&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;账务交易一致性设计概述 - ITechLib&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>接口设计</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;加密、解密&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/132352160&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;国密算法介绍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://hutool.cn/docs/#/crypto/%E5%9B%BD%E5%AF%86%E7%AE%97%E6%B3%95%E5%B7%A5%E5%85%B7-SmUtil&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hutool参考文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ucloud.cn/yun/42623.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python&amp;amp;Java互通rsa加密解密 - UCloud云社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://pythonmana.com/2022/01/202201130655473028.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Java RSA、AES加解密，Python RSA、AES加解密&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;系统鉴权设计&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://sa-token.cc/doc.html#/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sa-Token&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>权益系统</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%9D%83%E7%9B%8A%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%9D%83%E7%9B%8A%E7%B3%BB%E7%BB%9F/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;权益、活动系统方案设计参考网址&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/androidstarjack/article/details/124521641&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这个是真的厉害，高并发场景下的订单和库存处理方案，讲的很详细了！_androidstarjack的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.iamlintao.com/7011.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;转载：设计一个会员权益体系应该怎样做 – 26点的博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.woshipm.com/pd/424836.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;深度推荐｜史上最完整用户成长体系设计分析，附6大案例 | 人人都是产品经理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.teqng.com/2021/09/07/%E9%9D%A2%E9%9C%B8%EF%BC%9A%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%EF%BC%9F/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;面霸：秒杀系统如何设计？ - TeqNG&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.tencent.com/developer/article/1520361&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这是我读过写得最好的【秒杀系统架构】分析与实战！ - 腾讯云开发者社区-腾讯云&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>数据库设计</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;字典表设计&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Jessicahust/translation/blob/master/tiemao_2016/03_dict_table_design/03_dict_table_design.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;通用数据字典表结构设计&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.cn/post/7070308288457359390&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;实现数据字典的缓存、加载、刷新和映射的集成框架 - 掘金&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/dromara/RuoYi-Vue-Plus/wikis/pages?sort_id=4836388&amp;amp;doc_id=1469725&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RuoYi-Plus文档预览 - Gitee.com&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>网关设计</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E7%BD%91%E5%85%B3%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E7%BD%91%E5%85%B3%E8%AE%BE%E8%AE%A1/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;hextra-cards mt-4 gap-4 grid not-prose&#34; style=&#34;--rows: 3;&#34;&gt;
+  
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;
+    href=&#34;%e5%9f%ba%e4%ba%8espring%20cloud%20gateway&amp;#43;sentinel%e6%9e%84%e5%bb%ba%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%bd%91%e5%85%b3&#34;&gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2&#34;/&gt;&lt;/svg&gt;基于spring cloud gateway&amp;#43;sentinel构建微服务网关&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;
+    href=&#34;%e5%9f%ba%e4%ba%8espring%20cloud&amp;#43;zuul&amp;#43;sentinel%e5%bc%80%e5%8f%91%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%bd%91%e5%85%b3&#34;&gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4&#34;/&gt;&lt;/svg&gt;基于spring cloud&amp;#43;zuul&amp;#43;sentinel开发微服务网关&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a
+    class=&#34;hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900&#34;
+    href=&#34;qiqi-gateway&#34;&gt;&lt;span class=&#34;flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M20.56 18H3.44C2.65 18 2 17.37 2 16.59V7.41C2 6.63 2.65 6 3.44 6h17.12c.79 0 1.44.63 1.44 1.41v9.18c0 .78-.65 1.41-1.44 1.41M6.81 15.19v-3.66l1.92 2.35l1.92-2.35v3.66h1.93V8.81h-1.93l-1.92 2.35l-1.92-2.35H4.89v6.38h1.92M19.69 12h-1.92V8.81h-1.92V12h-1.93l2.89 3.28L19.69 12Z&#34;/&gt;&lt;/svg&gt;qiqi-gateway&lt;/span&gt;&lt;/a&gt;
+
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Redis搭建双中心集群</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/redis%E6%90%AD%E5%BB%BA%E5%8F%8C%E4%B8%AD%E5%BF%83%E9%9B%86%E7%BE%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/redis%E6%90%AD%E5%BB%BA%E5%8F%8C%E4%B8%AD%E5%BF%83%E9%9B%86%E7%BE%A4/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/xingxia/p/redis_migration_tool.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Redis迁移工具之Redis-shake - X-Wolf - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.aliyun.com/article/783138&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;揭开RedisShake的秘密-阿里云开发者社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.cn/post/7020227942793871396&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;搞懂异地多活，看这篇就够了 - 掘金&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ctripcorp/x-pipe&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub - ctripcorp/x-pipe: X-Pipe是由携程框架部门研发的Redis多数据中心复制管理系统。基于Redis的Master-Slave复制协议，实现低延时、高可用的Redis多数据中心、跨公网数据复制，并且提供一键机房切换，复制监控、异常报警等功能。开源版本和携程内部生产环境版本一致。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/101914486&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;再谈Redis双活实现方案&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;代理服务器&lt;/h1&gt;&lt;p&gt;使用 HAProxy、nginx、keepalived、redis-sentinel、Twemproxy 等代理服务器实现 Redis 双中心集群有以下优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以灵活地配置负载均衡策略，以满足不同的业务需求。&lt;/li&gt;
+&lt;li&gt;通过分布式的方式实现高可用，可以保证 Redis 的数据完整性和可用性。&lt;/li&gt;
+&lt;li&gt;代理服务器的容错能力很强，可以应对 Redis 集群中的故障和不同级别的网络故障。&lt;/li&gt;
+&lt;li&gt;可以使用监控工具监控 Redis 集群的运行情况，及时发现问题并进行处理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是，使用这些代理服务器实现 Redis 双中心集群也有一些缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;需要维护额外的代理服务器，增加了系统的复杂度。&lt;/li&gt;
+&lt;li&gt;如果代理服务器出现故障，可能会导致整个 Redis 集群不可用。&lt;/li&gt;
+&lt;li&gt;需要对代理服务器进行调优，以确保性能和可用性。&lt;/li&gt;
+&lt;li&gt;由于 Redis 本身不支持分布式事务，代理服务器可能需要实现一些特殊的逻辑来解决这个问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;HaProxy&lt;span class=&#34;absolute -mt-20&#34; id=&#34;haproxy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#haproxy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;HAProxy 是一个高性能的 TCP/HTTP 负载均衡器，它提供了多种负载均衡策略和容错机制。它的优点在于支持多协议、性能优良、稳定可靠，能够提供高可用性保障。但它并不能直接支持 Redis 协议，需要配合其他工具，例如 redis-sentinel 或 keepalived 来实现 Redis 集群的双中心高可用。&lt;/p&gt;
+&lt;p&gt;另外，HAProxy 需要一定的配置才能够对 Redis 进行负载均衡，需要用户对其有一定的了解。同时，它在故障转移方面的支持也比较弱，如果要实现更复杂的容错机制，需要配合其他工具来实现。&lt;/p&gt;
+&lt;h2&gt;Nginx&lt;span class=&#34;absolute -mt-20&#34; id=&#34;nginx&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#nginx&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;nginx 是一个高性能的 HTTP 和反向代理服务器，它支持多种负载均衡策略和提供了一定的容错机制。它的优点在于支持多协议、性能优良、稳定可靠，能够提供一定程度的高可用性保障。&lt;/p&gt;
+&lt;p&gt;但是 nginx 并不能直接支持 Redis 协议，需要配合其他工具，例如 redis-sentinel 或 keepalived 来实现 Redis 集群的双中心高可用。同时，nginx 的配置略显复杂，需要对其有一定的了解才能够使用。在故障转移方面，nginx 支持的也比较弱，如果要实现更复杂的容错机制，需要配合其他工具来实现。&lt;/p&gt;
+&lt;h2&gt;Keepalived&lt;span class=&#34;absolute -mt-20&#34; id=&#34;keepalived&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#keepalived&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;keepalived 是一个高可用的 Linux 工具，它支持 VRRP 协议，能够实现两个或多个网关设备之间的虚拟 IP 地址的高可用性。通过在 Redis 双中心集群中部署 keepalived 可以实现两个 Redis 中心之间的虚拟 IP 地址，并实现故障转移。&lt;/p&gt;
+&lt;p&gt;使用 keepalived 的优点在于配置简单，可以实现自动故障转移，且能够提供一定程度的高可用性保障。缺点在于不能直接支持 Redis 协议，需要和其他工具配合使用，且支持的故障转移策略较少。&lt;/p&gt;
+&lt;h2&gt;Redis-sentinel&lt;span class=&#34;absolute -mt-20&#34; id=&#34;redis-sentinel&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#redis-sentinel&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Redis Sentinel 是 Redis 提供的一个高可用方案，它能够监控 Redis 主从复制状态，并在主服务器故障时实现自动故障转移。使用 Redis Sentinel 可以实现 Redis 双中心集群的高可用，并能够提供多种故障转移策略的支持。&lt;/p&gt;
+&lt;p&gt;使用 Redis Sentinel 的优点在于支持多种故障转移策略，且支持 Redis 协议，可以直接配合 Redis 使用。缺点在于配置较为复杂，需要在每个 Redis 节点上都配置 Sentinel，且在转移期间可能存在数据不一致的情况。&lt;/p&gt;
+&lt;h2&gt;Twemproxy&lt;span class=&#34;absolute -mt-20&#34; id=&#34;twemproxy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#twemproxy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Twemproxy 是 Twitter 开源的一款 Redis 代理服务器，它具有轻量级、高性能和支持 Redis 协议的特点。使用 Twemproxy 可以实现 Redis 双中心集群的高可用，并且支持基于轮询、哈希、随机等多种负载均衡策略。&lt;/p&gt;
+&lt;p&gt;使用 Twemproxy 的优点在于配置简单，只需要在代理服务器上配置 Twemproxy 即可。缺点在于不支持 Redis Sentinel 故障转移策略，且在转移期间也可能存在数据不一致的情况。&lt;/p&gt;
+&lt;h2&gt;Redis Cluster&lt;span class=&#34;absolute -mt-20&#34; id=&#34;redis-cluster&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#redis-cluster&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;使用 Redis Cluster 实现 Redis 双中心集群的优点是它可以自动分配数据到不同的节点上，并提供内置的故障转移机制，保证了数据的高可用性。但是，Redis Cluster 有一些缺点，包括不支持所有 Redis 的数据类型和操作，比如不支持事务操作和排序操作，还需要手动进行数据的重新平衡，因此需要进行一定的折衷。&lt;/p&gt;
+&lt;p&gt;除了使用 Redis Cluster，我们还可以使用基于消息队列的方案来实现 Redis 双中心集群。例如，我们可以在主中心和备中心之间使用消息队列来进行数据同步，从而保证两个中心的数据一致性。这种方案的优点是可以支持所有 Redis 的数据类型和操作，并且在失效时可以通过消息队列来进行数据的恢复，不需要手动平衡数据。但是，这种方案的缺点是实现较为复杂，需要消息队列的支持，同时还可能会增加延迟。&lt;/p&gt;
+&lt;h1&gt;引入消息队列&lt;/h1&gt;&lt;p&gt;使用消息队列实现 redis 双中心集群的方式是将两个 redis 集群分别部署在不同的地域，然后使用消息队列在两个集群之间同步数据。这种方式的优点是可以实现异地多活，避免单点故障；缺点是需要引入消息队列组件，对系统的复杂度和成本都有一定的增加。&lt;/p&gt;
+&lt;p&gt;在搭建 Redis 双中心集群时，消息队列和代理服务器可以结合使用，这样可以实现更灵活、可扩展的方案。比如，在使用 HAProxy、nginx 或 Twemproxy 等代理服务器时，可以通过消息队列实现主从数据同步、状态监控和快速切换等功能。这样一来，即使在大量请求的情况下，也可以保证 Redis 双中心集群的高可用性。&lt;/p&gt;
+&lt;p&gt;代理服务器可以在客户端和 Redis 集群之间提供负载均衡和故障切换等功能。而消息队列可以在两个 Redis 集群之间提供异步通信，实现数据的同步更新和一致性。&lt;/p&gt;
+&lt;h2&gt;只用消息队列进行搭建Redis双中心集群&lt;span class=&#34;absolute -mt-20&#34; id=&#34;只用消息队列进行搭建redis双中心集群&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%8f%aa%e7%94%a8%e6%b6%88%e6%81%af%e9%98%9f%e5%88%97%e8%bf%9b%e8%a1%8c%e6%90%ad%e5%bb%baredis%e5%8f%8c%e4%b8%ad%e5%bf%83%e9%9b%86%e7%be%a4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;在只使用消息队列的 redis 双中心集群方案中，主从服务器之间的数据复制采用异步方式实现。也就是说，主服务器在接收到新的写请求时，会先将请求写入本地缓存，然后将请求发送到消息队列中。从服务器通过消息队列订阅主服务器发送的请求，并根据请求内容更新自己的缓存。由于数据复制采用了异步方式，主从服务器之间的复制延迟会大大降低，这样在主服务器宕机时，从服务器能够快速接管主服务器的角色，从而提高了系统的可用性。&lt;/p&gt;
+&lt;p&gt;不过，只使用消息队列的 redis 双中心集群方案也有一些缺点。由于主从服务器之间的数据复制是异步的，容易出现数据不一致的情况。此外，在消息队列中传递的请求可能会丢失，从而导致数据的一致性和可靠性降低。这是因为消息队列并不能保证每条消息都能被正确地发送和接收，因此有可能会导致主从集群之间的数据不一致。此外，如果消息队列中的消息堆积过多，也可能会影响主从集群之间数据的同步。因此，如果要实现 Redis 双中心集群，使用消息队列实现异步复制可能不是一个非常好的选择。&lt;/p&gt;
+&lt;h1&gt;伪实现&lt;/h1&gt;&lt;h2&gt;1.kafka+redis-sentinel&lt;span class=&#34;absolute -mt-20&#34; id=&#34;1kafkaredis-sentinel&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1kafkaredis-sentinel&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;首先，在两个地点分别搭建一个 Kafka 集群，每个集群至少包含一个生产者、一个消费者和一个 broker。&lt;/p&gt;
+&lt;p&gt;在每个地点都搭建一个 Redis Sentinel 集群，每个集群至少包含一个主服务器、一个从服务器和一个 Sentinel。&lt;/p&gt;
+&lt;p&gt;然后，在 Kafka 消费者中实现数据复制的逻辑，在两个地点的 Kafka 消费者中都运行这段逻辑。&lt;/p&gt;
+&lt;p&gt;接着，在 Redis Sentinel 中配置数据复制的逻辑，即将两个地点的 Redis Sentinel 集群配置为双中心集群。&lt;/p&gt;
+&lt;p&gt;最后，在 Redis 主服务器中添加一个客户端，客户端能够通过 Redis Sentinel 访问 Redis 主服务器，并将数据写入 Kafka 生产者。&lt;/p&gt;
+&lt;p&gt;当客户端写入数据时，Kafka 生产者会将数据发送到两个地点的 Kafka 消费者，由消费者进行数据复制。&lt;/p&gt;
+&lt;h2&gt;2.kafka+Twemproxy&lt;span class=&#34;absolute -mt-20&#34; id=&#34;2kafkatwemproxy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2kafkatwemproxy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;安装 kafka，并在两个不同地点启动两个 kafka 集群。&lt;/li&gt;
+&lt;li&gt;安装 redis，并在每个地点启动一个 redis 集群。&lt;/li&gt;
+&lt;li&gt;安装 Twemproxy，并启动 Twemproxy 服务。&lt;/li&gt;
+&lt;li&gt;将 kafka 集群与 redis 集群连接起来，通过消息队列实现数据的异步复制。&lt;/li&gt;
+&lt;li&gt;在 Twemproxy 中配置 redis 地址，并通过负载均衡策略对客户端的请求进行路由。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>积分商城</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E7%A7%AF%E5%88%86%E5%95%86%E5%9F%8E/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E7%A7%AF%E5%88%86%E5%95%86%E5%9F%8E/</guid>
+      <description>
+        
+        
+        &lt;p&gt;
+    &lt;img src=&#34;../yuque_%e7%a7%af%e5%88%86%e5%95%86%e5%9f%8e1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;
+&lt;a href=&#34;https://www.woshipm.com/pd/5555614.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://cdn款优秀积分商城产品需具备的准则与功能梳理 | 人人都是产品经理&lt;/a&gt;
+
+    &lt;img src=&#34;../yuque_%e7%a7%af%e5%88%86%e5%95%86%e5%9f%8e2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>基于spring-boot开发自定义jar包Notes</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E5%9F%BA%E4%BA%8Espring-boot%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89jar%E5%8C%85notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E5%9F%BA%E4%BA%8Espring-boot%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89jar%E5%8C%85notes/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;前言&lt;/h1&gt;&lt;p&gt;我使用的环境或配置如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;语言&lt;/th&gt;
+&lt;th&gt;java&lt;/th&gt;
+&lt;th&gt;1.8&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;框架&lt;/td&gt;
+&lt;td&gt;spring-boot&lt;/td&gt;
+&lt;td&gt;2.3.12.RELEASE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;打包工具&lt;/td&gt;
+&lt;td&gt;maven&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IDE&lt;/td&gt;
+&lt;td&gt;idea&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;远端maven库&lt;/td&gt;
+&lt;td&gt;Nexus私库&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1&gt;1. 一些坑&lt;/h1&gt;&lt;h2&gt;1.1. &lt;code&gt;package&lt;/code&gt;（包）名称&lt;span class=&#34;absolute -mt-20&#34; id=&#34;11-package包名称&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#11-package%e5%8c%85%e5%90%8d%e7%a7%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;务必使用类似于&lt;code&gt;org.example.name&lt;/code&gt;的&lt;code&gt;package&lt;/code&gt;名称，并且尽量与&lt;code&gt;pom.xml&lt;/code&gt;文件中&lt;code&gt;groupId&lt;/code&gt;一致&lt;/p&gt;
+&lt;h2&gt;1.2. 自动下载依赖包&lt;span class=&#34;absolute -mt-20&#34; id=&#34;12-自动下载依赖包&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#12-%e8%87%aa%e5%8a%a8%e4%b8%8b%e8%bd%bd%e4%be%9d%e8%b5%96%e5%8c%85&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;如果会使用&lt;code&gt;mvn install&lt;/code&gt;，它会自动打包当前&lt;code&gt;pom.xml&lt;/code&gt;文件为&lt;code&gt;.pom&lt;/code&gt;文件，安装到本地库中；如果没使用或者不会使用&lt;code&gt;mvn install&lt;/code&gt;，则需要将工具包的&lt;code&gt;pom.xml&lt;/code&gt;复制一份，命名为&lt;code&gt;xxx-x.x.x.pom&lt;/code&gt;，并且放在本地maven仓库引用该包的对应路径下。
+否则，不会自动下载工具包的依赖包。网上有很多教人将依赖包打入工具包中形成一个&amp;quot;大而全&amp;quot;的jar包的教程，想想这肯定是不正确的。&lt;/p&gt;
+&lt;h2&gt;1.3. &lt;code&gt;@Value&lt;/code&gt;注入配置项&lt;span class=&#34;absolute -mt-20&#34; id=&#34;13-value注入配置项&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#13-value%e6%b3%a8%e5%85%a5%e9%85%8d%e7%bd%ae%e9%a1%b9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;在构建工具包时，&lt;code&gt;@Value&lt;/code&gt;注解会使用工具包的&lt;code&gt;application.yml&lt;/code&gt;或&lt;code&gt;.properties&lt;/code&gt;文件。但将工具包引入到实际开发应用后，&lt;code&gt;@Value&lt;/code&gt;注解使用的&lt;code&gt;application.yml&lt;/code&gt;文件则是实际开发应用的而非工具包的。这是由于&lt;code&gt;classpath&lt;/code&gt;的改变。
+我构建工具包时，明确需要&lt;code&gt;@Value&lt;/code&gt;注解使用被实际开发应用的配置文件。如果你希望使用工具包自带的&lt;code&gt;application.yml&lt;/code&gt;文件，或许有解决办法，例如增加&lt;code&gt;classpath&lt;/code&gt;或者使用&lt;code&gt;@TestProperties&lt;/code&gt;注解等等，**我没有尝试，无法给出准确答案。**实际上，我不推荐这样做，如果是一份写死的静态资源，我认为不需要使用&lt;code&gt;@Value&lt;/code&gt;注解。
+&lt;code&gt;@Value&lt;/code&gt;注解则涉及&lt;code&gt;null&lt;/code&gt;的问题，务必加上默认值&lt;code&gt;null&lt;/code&gt;，因为这是一个工具包，不一定含有&lt;code&gt;application.yml&lt;/code&gt;配置文件。并且，在使用相关变量时，进行空校验处理。&lt;/p&gt;
+&lt;h2&gt;1.4. 使用自定义jar包时，扫描不到&lt;code&gt;@Service&lt;/code&gt;&lt;span class=&#34;absolute -mt-20&#34; id=&#34;14-使用自定义jar包时扫描不到service&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#14-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%ae%9a%e4%b9%89jar%e5%8c%85%e6%97%b6%e6%89%ab%e6%8f%8f%e4%b8%8d%e5%88%b0service&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;由于自定义jar包基于spring-boot框架，那么在别的spring-boot应用里，可能没被指定包扫描路径。需要在启动项注解加上配置，如下所示：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-0&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@SpringBootApplication&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;scanBasePackages&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;org.example.xxx&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;})&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-0&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果实际开发应用和工具包的包名不同，那么还需要加上实际开发应用的包名称，否则，应用中的类会无法被扫描注入到spring容器中&lt;/p&gt;
+&lt;h2&gt;1.5. 反编译导致变量名混淆、注释丢失&lt;span class=&#34;absolute -mt-20&#34; id=&#34;15-反编译导致变量名混淆注释丢失&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#15-%e5%8f%8d%e7%bc%96%e8%af%91%e5%af%bc%e8%87%b4%e5%8f%98%e9%87%8f%e5%90%8d%e6%b7%b7%e6%b7%86%e6%b3%a8%e9%87%8a%e4%b8%a2%e5%a4%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;反编译导致变量名混淆和注释丢失无法避免，那么只能在maven打包时，增加添加打包源码的步骤，pom.xml配置如下：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-1&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;build&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;plugins&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;plugin&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.maven.plugins&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;maven-source-plugin&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;3.2.1&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;attach&amp;gt;&lt;/span&gt;true&lt;span class=&#34;nt&#34;&gt;&amp;lt;/attach&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;lt;executions&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;execution&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;nt&#34;&gt;&amp;lt;phase&amp;gt;&lt;/span&gt;compile&lt;span class=&#34;nt&#34;&gt;&amp;lt;/phase&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;nt&#34;&gt;&amp;lt;goals&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;lt;goal&amp;gt;&lt;/span&gt;jar&lt;span class=&#34;nt&#34;&gt;&amp;lt;/goal&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;nt&#34;&gt;&amp;lt;/goals&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;/execution&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;lt;/executions&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;/plugin&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;/plugins&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/build&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-1&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在使用idea查看.class文件时，则可以下载到source.jar文件&lt;/p&gt;
+&lt;h1&gt;2. application.yml自动补全提示配置&lt;/h1&gt;&lt;p&gt;在src/main/resources下新建META-INF目录，新建&lt;code&gt;additional-spring-configuration-metadata.json&lt;/code&gt;文件，相关配置和语法见&lt;a href=&#34;https://docs.spring.io/spring-boot/docs/2.3.12.RELEASE/reference/html/appendix-configuration-metadata.html#configuration-metadata-annotation-processor&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Configuration Metadata&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在pom.xml文件中新增依赖，如下所示：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-2&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-boot-configuration-processor&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;optional&amp;gt;&lt;/span&gt;true&lt;span class=&#34;nt&#34;&gt;&amp;lt;/optional&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-2&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1&gt;3. maven deploy到Nexus库步骤&lt;/h1&gt;&lt;p&gt;在pom.xml文件中增加以下配置：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-3&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;distributionManagement&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nt&#34;&gt;&amp;lt;repository&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;Nexus-Releases&lt;span class=&#34;nt&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;My Nexus&lt;span class=&#34;nt&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;url&amp;gt;&lt;/span&gt;http://url:port/repository/releases/&lt;span class=&#34;nt&#34;&gt;&amp;lt;/url&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nt&#34;&gt;&amp;lt;/repository&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nt&#34;&gt;&amp;lt;/distributionManagement&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-3&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;repository&lt;/code&gt;为发行版仓库，发行版的版本后缀添加-RELEASE，或者直接是数字，deploy时会自动部署到发行版仓库。还有一类为&lt;code&gt;snapshotRepository&lt;/code&gt;快照版仓库，需要加-SNAPSHOT后缀。&lt;/p&gt;
+&lt;p&gt;在&lt;strong&gt;maven的配置文件&lt;/strong&gt;中settings.xml下增加：&lt;/p&gt;
+&lt;div class=&#34;code-block relative mt-6 first:mt-0 group/code&#34;&gt;&lt;div id=&#34;code-block-4&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;servers&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;server&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;Nexus-Releases&lt;span class=&#34;nt&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;lt;username&amp;gt;&lt;/span&gt;admin&lt;span class=&#34;nt&#34;&gt;&amp;lt;/username&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;lt;password&amp;gt;&lt;/span&gt;123456&lt;span class=&#34;nt&#34;&gt;&amp;lt;/password&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;/server&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;/servers&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;opacity-0 transition group-hover/code:opacity-100 flex gap-1 absolute m-[11px] right-0 top-0&#34;&gt;
+    &lt;button
+      class=&#34;code-copy-btn group/copybtn transition-all active:opacity-50 bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900 rounded-md p-1.5 dark:bg-primary-300/10 dark:border-white/10 dark:text-gray-400 dark:hover:text-gray-50&#34;
+      title=&#34;Copy code&#34;
+      data-clipboard-target=&#34;#code-block-4&#34;
+    &gt;
+      &lt;div class=&#34;group-[.copied]/copybtn:hidden copy-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;hidden group-[.copied]/copybtn:block success-icon pointer-events-none h-4 w-4&#34;&gt;&lt;/div&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;注意，&lt;code&gt;distributionManagement&lt;/code&gt;下&lt;code&gt;repository&lt;/code&gt;或者&lt;code&gt;snapshotRepository&lt;/code&gt;配置的&lt;code&gt;id&lt;/code&gt;需要和&lt;code&gt;server&lt;/code&gt;下的&lt;code&gt;id&lt;/code&gt;一致&lt;/p&gt;
+&lt;p&gt;之后，执行&lt;code&gt;mvn clean deploy&lt;/code&gt;即可.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>项目和需求快速开发思路</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E9%A1%B9%E7%9B%AE%E5%92%8C%E9%9C%80%E6%B1%82%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%80%9D%E8%B7%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E9%A1%B9%E7%9B%AE%E5%92%8C%E9%9C%80%E6%B1%82%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%80%9D%E8%B7%AF/</guid>
+      <description>
+        
+        
+        &lt;p&gt;工作一坤年后，开始思考项目和需求快速开发应该怎么做。&lt;/p&gt;
+&lt;h2&gt;吐槽&lt;span class=&#34;absolute -mt-20&#34; id=&#34;吐槽&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%90%90%e6%a7%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;项目可以理解为从头拿IDEA构建一个工程，不过一般会使用用&lt;strong&gt;以前的一个架子&lt;/strong&gt;打底来做。当然，某些初创公司会重搭。需求可以理解为已上线运行的项目基础之上的增量迭代开发。增量开发也就是功能优化、漏洞修复，改动的是代码、配置、数据库，恼火的是表实体层dao层那一堆，崩溃的是&lt;strong&gt;文档维护修改&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这一段话总结下，就是一个架子，很重要，一个代码生成器，很重要，一个文档自动更新，非常重要！&lt;/p&gt;
+&lt;p&gt;先说架子。调研了下，架子，网上开源的很多，收费的只是文档和视频教程，这也没办法，都要吃饭。不过有一说一，直接拿来用很痛苦，太重了，拆分很是受罪，如果不缴费学习，自己去探索剥离，纯纯坐牢。我决定不缴这个钱，从所谓开源框架中找文档还算多的，以最小的、能随便拆分的方式，自己写或者标明作者，来组建架子的各个模块。当然，我暂时没有写详细注释和文档的打算，也没有录视频教程抢开源大佬生意的打算，只是磨炼一下自己的技术。&lt;/p&gt;
+&lt;p&gt;开源架子往往都有些共通点，需求不同，issue实现多了，轻量呢慢慢变重，拆分不便。不用呢，重复造轮子，用呢，abcd几个开源组件一组合，然后修bug，妥妥活受罪。之前组合spring gateway和sentinel，直接因为文档不清晰加版本问题，验出来几个坑（&lt;a href=&#34;https://www.yuque.com/felixlyd/lyd-note/bux8ur1sf1nf7q8e?view=doc_embed&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;基于spring cloud gateway+sentinel构建微服务网关&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;所以，还是能少用则少用。拿很知名的hutools来说，拆成了多个模块，这种想法就很棒，用谁引谁，不然包冲突能让人头皮发麻，虽然有maven helper了。&lt;/p&gt;
+&lt;p&gt;再说代码生成器，&lt;strong&gt;脱离设计和框架&lt;/strong&gt;的代码生成器就不说了，没啥太大意义，mybatis-plus直接写个脚本，妥妥完事。如果想自定义模板，网上开源的也多，一大堆，推荐一手PDmaner，纯纯免费，公众号也不需要关注，改改模板，非常够用。或者设计到实现，搞个apifox，从数据模型到接口文档，再转变成代码，完全OK。不过，apifox还是有不少BUG，例如数据模型的长度在转sql的时候直接一个宣告死亡，只能255，也不知道哪个版本修。唉，但是，又不得不说但是了，真的符合工作岗位上要求使用的开发框架吗？&lt;/p&gt;
+&lt;p&gt;当然，现在的系统实现已经互相借鉴互相学习，&lt;strong&gt;大家都找到最优解了&lt;/strong&gt;，但真的是这样吗？举个例子，早年写Javadoc，后来写swagger注解，现在又在追求无侵入了，看了下smart-doc，确实很厉害，但引了一堆依赖，又得去看看依赖里有哪些jar包&amp;hellip;&lt;/p&gt;
+&lt;p&gt;当然，其实生产上挂了就挂了，无所谓了，漏洞就漏洞了，也没办法，老板就给那点工资，凭啥呢。确实是。&lt;/p&gt;
+&lt;p&gt;再说说文档及时更新，showdoc+runapi、smart-doc+torna集成、或者就拿apifox吧，真的apifox再把bug修修简直无敌。可惜就是得联网登录，私网部署又得找领导谈，我也谈不动啊。我就一秋儿，却要关心这么多事，我也很费解。这些东西头疼的只能说头疼，单机也就算了，微服务呢？杀死游戏。其实还有knife4j，他们是真的很厉害，我也很敬佩，swagger丑爆的ui直接干烂，springdoc迁移了还在用swagger那丑不拉几的ui，简直牛皮。这一方面不得不说我们国人很牛。knife4j能干微服务，答案已经出来了。&lt;/p&gt;
+&lt;h2&gt;思路&lt;span class=&#34;absolute -mt-20&#34; id=&#34;思路&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%80%9d%e8%b7%af&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;吐完槽，讲讲思路。
+首先是架子，这个生产上跑起来了，就先不慌了。先整个思维导图，后面慢慢补充迭代起走。思路很简单，按spring-boot的思想，做成模块的装配，要引就引，不引拉到。而且模块粒度拆的足够细，要用谁用谁。然后再像hutools做个hutools-all，给懒人专用。&lt;/p&gt;
+&lt;p&gt;其次是代码生成器，这个比较紧急，而且方案要好好想下。模板这东西，肯定要能够导入导出，&lt;strong&gt;而且得稍微改改&lt;/strong&gt;，就能套到另一个架子中。&lt;strong&gt;表肯定是能够和数据库连的&lt;/strong&gt;，mysql和oracle能支持就行了，毕竟oracle都收购mysql了，国产数据库语法大概也不会脱离这两个了。实在不行，找个GPT翻译数据库导出的sql吧，再自己找个mysql连上。这两者其实PDmaner已经实现了，所以我一直在夸。但PDmaner呢，模板不好管理，实在不行也就它了。&lt;/p&gt;
+&lt;p&gt;再说文档，这样一来，哪怕单用PDmaner，数据字典咱们已经有了。就差接口文档了，其实swagger那玩意勉强是够的，换个knife4j前身swagger-bootstrap-ui把烂UI一换，其实够用。可是我们很馋knife4j那个离线导出html，那玩意是真的好用，谁用谁知道。而且它还能导出word，绝不绝，真的是打了国人的七寸痛点。apifox的接口文档html其实很好看，但它没法导出来，想想也知道，这玩意能导出来，谁还买它的私网部署？所以，我要用上一个springdoc加上它官方推荐的一个几百个star的小项目（真怕这个作者直接关项目）&lt;a href=&#34;https://github.com/dnault/therapi-runtime-javadoc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub - dnault/therapi-runtime-javadoc: Read Javadoc comments at run time.&lt;/a&gt;来做这件事。&lt;/p&gt;
+&lt;h2&gt;方案&lt;span class=&#34;absolute -mt-20&#34; id=&#34;方案&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%96%b9%e6%a1%88&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;
+    &lt;img src=&#34;../yuque_%e9%a1%b9%e7%9b%ae%e5%92%8c%e9%9c%80%e6%b1%82%e5%bf%ab%e9%80%9f%e5%bc%80%e5%8f%91%e6%80%9d%e8%b7%af1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../yuque_%e9%a1%b9%e7%9b%ae%e5%92%8c%e9%9c%80%e6%b1%82%e5%bf%ab%e9%80%9f%e5%bc%80%e5%8f%91%e6%80%9d%e8%b7%af2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>状态模式和状态机</title>
+      <link>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F%E5%92%8C%E7%8A%B6%E6%80%81%E6%9C%BA/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://felixlyd.github.io/lyd-notes/1.%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F%E5%92%8C%E7%8A%B6%E6%80%81%E6%9C%BA/</guid>
+      <description>
+        
+        
+        &lt;p&gt;本文代码位于&lt;a href=&#34;https://github.com/felixlyd/order-state-sample&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub - felixlyd/order-state-sample: 订单状态机示例项目 基于cola状态机&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000040967688&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;彻底搞懂Spring状态机原理，实现订单与物流解耦&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mdnice.com/writing/40e83d424be1422ab85615318c87b798&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;详解状态模式以及Spring状态机 - mdnice 墨滴&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.aliyun.com/article/937549&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;管理订单状态，该用上状态机吗？-阿里云开发者社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/significantfrank/article/details/104996419&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;实现一个状态机引擎，教你看清DSL的本质_张建飞（Frank）的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.aliyun.com/article/783803#slide-7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;高德打车通用可编排订单状态机引擎设计-阿里云开发者社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://refactoringguru.cn/design-patterns/state&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;状态设计模式&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://juejin.cn/post/7011166776947900452&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;设计模式在电商业务下的实践——状态模式 - 掘金&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.modb.pro/db/391050&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;状态机引擎在vivo营销自动化中的深度实践 | 引擎篇02 - 墨天轮&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
