@@ -36,8 +36,9 @@ zuul、ribbon、hystrix实现网关路由转发、限流熔断; 引入feign实�
 
 
 
+  
   <meta itemprop="name" content="基于spring cloud&#43;zuul&#43;sentinel开发微服务网关">
-<meta itemprop="description" content="前言本文代码于GitHub - felixlyd/zuul-sentinel-sample: 该demo：1. zuul、ribbon、hystrix实现网关路由转发、限流熔断；2. 引入feign实现微服务调用；3. 考虑接口安全设计
+  <meta itemprop="description" content="前言本文代码于GitHub - felixlyd/zuul-sentinel-sample: 该demo：1. zuul、ribbon、hystrix实现网关路由转发、限流熔断；2. 引入feign实现微服务调用；3. 考虑接口安全设计
 由于项目历史遗留问题，需要使用较老的spring cloud组件集成，并且需要契合老应用做局部改造
 因此，有以下考虑和要求：
 
@@ -49,9 +50,7 @@ zuul、ribbon、hystrix实现网关路由转发、限流熔断; 引入feign实�
  能够对限流进行监控;
  考虑两台网关的限流;
 ">
-
-<meta itemprop="wordCount" content="5951">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="基于spring cloud&#43;zuul&#43;sentinel开发微服务网关"/>
+  <meta itemprop="wordCount" content="5951"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="基于spring cloud&#43;zuul&#43;sentinel开发微服务网关">
 <meta name="twitter:description" content="前言本文代码于GitHub - felixlyd/zuul-sentinel-sample: 该demo：1. zuul、ribbon、hystrix实现网关路由转发、限流熔断；2. 引入feign实现微服务调用；3. 考虑接口安全设计
 由于项目历史遗留问题，需要使用较老的spring cloud组件集成，并且需要契合老应用做局部改造
 因此，有以下考虑和要求：
@@ -63,7 +62,7 @@ zuul、ribbon、hystrix实现网关路由转发、限流熔断; 引入feign实�
  能够契合老spring cloud应用做局部改造;
  能够对限流进行监控;
  考虑两台网关的限流;
-"/>
+">
 
     <link rel="preload" href="/css/compiled/main.min.16b68a354e65cf45bc12a9b9a023854fe5d743c179103958df82062ebdb2af3a.css" as="style" integrity="sha256-FraKNU5lz0W8Eqm5oCOFT&#43;XXQ8F5EDlY34IGLr2yrzo=" />
     <link href="/css/compiled/main.min.16b68a354e65cf45bc12a9b9a023854fe5d743c179103958df82062ebdb2af3a.css" rel="stylesheet" integrity="sha256-FraKNU5lz0W8Eqm5oCOFT&#43;XXQ8F5EDlY34IGLr2yrzo=" />
@@ -363,7 +362,7 @@ zuul、ribbon、hystrix实现网关路由转发、限流熔断; 引入feign实�
               <a
                 href="#%e5%a6%82%e4%bd%95%e4%bf%ae%e6%94%b9feign%e7%9a%84%e9%bb%98%e8%ae%a4%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e7%ad%96%e7%95%a5"
                 class="flex rounded px-2 py-1.5 text-sm transition-colors [word-break:break-word] cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border flex gap-2 before:opacity-25 before:content-['#'] text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
-              >如何修改feign的默认负载均衡策略？</a>
+              >&lt;del&gt;如何修改feign的默认负载均衡策略？&lt;/del&gt;</a>
             </li>
           <li>
               <a
@@ -381,7 +380,7 @@ zuul、ribbon、hystrix实现网关路由转发、限流熔断; 引入feign实�
               <a
                 href="#%e5%af%b9hystrix%e8%bf%9b%e8%a1%8c%e7%9b%91%e6%8e%a7"
                 class="flex rounded px-2 py-1.5 text-sm transition-colors [word-break:break-word] cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border flex gap-2 before:opacity-25 before:content-['#'] text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
-              >对hystrix进行监控？</a>
+              >&lt;del&gt;对hystrix进行监控？&lt;/del&gt;</a>
             </li>
           <li>
               <a
@@ -1476,7 +1475,7 @@ zuul、ribbon、hystrix实现网关路由转发、限流熔断; 引入feign实�
 <nav class="hextra-toc order-last hidden w-64 shrink-0 xl:block print:hidden px-4" aria-label="table of contents">
     <div class="hextra-scrollbar sticky top-16 overflow-y-auto pr-4 pt-6 text-sm [hyphens:auto] max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:-mr-4 rtl:-ml-4"><p class="mb-4 font-semibold tracking-tight">此页上</p><ul></ul><ul>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#%e5%a6%82%e4%bd%95%e4%bf%ae%e6%94%b9feign%e7%9a%84%e9%bb%98%e8%ae%a4%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e7%ad%96%e7%95%a5">如何修改feign的默认负载均衡策略？
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#%e5%a6%82%e4%bd%95%e4%bf%ae%e6%94%b9feign%e7%9a%84%e9%bb%98%e8%ae%a4%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e7%ad%96%e7%95%a5"><del>如何修改feign的默认负载均衡策略？</del>
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
@@ -1488,7 +1487,7 @@ zuul、ribbon、hystrix实现网关路由转发、限流熔断; 引入feign实�
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#%e5%af%b9hystrix%e8%bf%9b%e8%a1%8c%e7%9b%91%e6%8e%a7">对hystrix进行监控？
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#%e5%af%b9hystrix%e8%bf%9b%e8%a1%8c%e7%9b%91%e6%8e%a7"><del>对hystrix进行监控？</del>
         </a>
       </li></ul><ul></ul><ul>
       <li class="my-2 scroll-my-6 scroll-py-6">
@@ -1516,7 +1515,7 @@ zuul、ribbon、hystrix实现网关路由转发、限流熔断; 引入feign实�
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#sentinel%e7%9b%91%e6%8e%a7%e6%95%b0%e6%8d%ae%e6%8c%81%e4%b9%85%e5%8c%96">sentinel监控数据持久化？
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#sentinel%e7%9b%91%e6%8e%a7%e6%95%b0%e6%8d%ae%e6%8c%81%e4%b9%85%e5%8c%96"><del>sentinel监控数据持久化？</del>
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
@@ -1544,7 +1543,7 @@ zuul、ribbon、hystrix实现网关路由转发、限流熔断; 引入feign实�
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#%e9%bb%91%e7%99%bd%e5%90%8d%e5%8d%95">黑白名单？
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#%e9%bb%91%e7%99%bd%e5%90%8d%e5%8d%95"><del>黑白名单？</del>
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
@@ -1552,7 +1551,7 @@ zuul、ribbon、hystrix实现网关路由转发、限流熔断; 引入feign实�
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
-        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#%e9%9b%86%e7%be%a4%e6%b5%81%e6%8e%a7">集群流控？
+        <a class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words" href="#%e9%9b%86%e7%be%a4%e6%b5%81%e6%8e%a7"><del>集群流控？</del>
         </a>
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
